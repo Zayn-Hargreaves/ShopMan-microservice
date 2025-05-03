@@ -1,0 +1,164 @@
+[2025-05-02 21:56:49] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 21:57:51] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:01:03] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:02:29] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:02:45] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:03:55] INFO: [c586007d-41b7-4b58-92a5-73268729395b] POST /api/v1//auth/signup
+[2025-05-02 22:08:46] INFO: [81564af1-46d2-4e24-9967-105f530c71b3] POST /api/auth/signup
+[2025-05-02 22:09:32] INFO: [d4be4b23-fe43-4859-887a-a73634da439f] POST /api/auth/signup
+[2025-05-02 22:09:49] INFO: [cab072e9-dbad-4539-b538-6e3f5baee969] POST /api/auth/signup
+[2025-05-02 22:14:39] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:14:45] INFO: [1a174c6c-ab29-4637-a940-2892587648e0] POST /api/auth/signup
+[2025-05-02 22:14:58] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:15:02] INFO: [3f5786b7-7d30-4b7a-b8e8-ab67bc101a49] POST /api/auth/signup
+[2025-05-02 22:15:49] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:15:54] INFO: [39369add-1221-4d3e-9f36-eaf4af40d6ee] POST /api/auth/signup
+[2025-05-02 22:16:13] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:18:30] INFO: [7e404cdb-74e5-40fd-9123-340efe9a33fe] POST /api/auth/signup
+[2025-05-02 22:18:53] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:19:07] INFO: [2598eff8-40c1-429c-8a76-5a695e8c1c70] POST /api/auth/signup
+[2025-05-02 22:20:26] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:20:31] INFO: [c2a8170d-20b7-420b-a5fa-875d27dddd4f] POST /api/auth/signup
+[2025-05-02 22:21:59] INFO: [c24df3d3-f27a-48de-81f0-ddb3a19c8e4e] POST /api/auth/signup
+[2025-05-02 22:25:25] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:25:28] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:25:31] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:25:34] INFO: [95efb667-3af8-4ece-a6de-d4046258a96a] POST /api/auth/signup
+[2025-05-02 22:25:54] INFO: [642993e1-92e9-41b1-88d5-aa1b1c4464b5] POST /api/auth/signup
+[2025-05-02 22:27:35] INFO: [dcf4a06c-3b3d-49eb-879c-3977c172ccc4] POST /api/auth/signup
+[2025-05-02 22:30:54] INFO: [ded5f04d-ca70-46ee-b1d4-a9294dbac9e7] POST /api/auth/signup
+[2025-05-02 22:31:36] INFO: [b60c8ac7-1c4a-4950-a6ae-3e58a3b2f1a6] POST /api/auth/signup
+[2025-05-02 22:31:40] INFO: [6cad6fbf-7a3c-47a2-973d-30abb7b9cf7c] POST /api/auth/signup
+[2025-05-02 22:32:53] INFO: [40e6c1b8-51eb-4b10-b1fc-925bbcca47b7] POST /api/auth/signup
+[2025-05-02 22:33:00] INFO: [1e6b81b8-5d46-46c4-9926-3953472cbdae] POST /api/auth/signup
+[2025-05-02 22:34:39] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 22:34:44] INFO: [8ff4b4ba-6c6c-4129-b159-1ea25902d847] POST /api/auth/signup
+[2025-05-02 22:35:33] INFO: [34cde20e-0c21-4276-95c1-3dd33761bab8] POST /api/auth/signup
+[2025-05-02 22:37:15] INFO: [c5728d06-d3b4-42f0-807e-5c14e0caddfe] POST /api/auth/signup
+[2025-05-02 22:38:45] INFO: [4e9a8d6b-700d-4ca9-8577-33ee59b6779d] POST /api/auth/signup
+[2025-05-02 22:47:21] INFO: [b25ee361-c6c7-4a0d-9ee8-9dba66ae353c] POST /api/auth/signup
+[2025-05-02 22:58:54] INFO: [d210be4b-0e0b-4699-ba5b-c35afca9f4e2] POST /api/auth/signup
+[2025-05-02 22:59:34] INFO: [9b39ae33-4163-4452-b806-6b6b2b911ee9] POST /api/auth/signup
+[2025-05-02 23:02:01] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:02:07] INFO: [54bee192-476f-46f7-bdc0-421e7c7dace2] POST /api/auth/signup
+[2025-05-02 23:02:27] INFO: [d4784423-55fe-4361-b045-3f4569853941] GET /
+[2025-05-02 23:02:54] INFO: [cfbdc376-8feb-4801-b431-860cba664cfe] POST /api/auth/signup
+[2025-05-02 23:03:37] INFO: [e89b6e37-4445-47f2-96d4-9a108387d5ac] POST /api/auth/signup
+[2025-05-02 23:05:42] INFO: [5c510339-f05f-4c32-be82-9e24637744df] POST /api/auth/signup
+[2025-05-02 23:12:19] INFO: [487ea6db-b373-48c7-a890-ffc59a3e7228] POST /api/auth/signup
+[2025-05-02 23:13:36] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:13:47] INFO: [a9ed798a-3bc1-49fe-a5ae-45804db52863] POST /api/auth/signup
+[2025-05-02 23:16:33] INFO: [74a25ed8-bd1c-462d-a513-9aa634829485] POST /api/auth/signup
+[2025-05-02 23:17:40] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:17:47] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:18:09] INFO: [f71e6e51-cdcc-43b3-9e33-60d4f573d145] POST /api/auth/signup
+[2025-05-02 23:26:12] INFO: [7e582cbe-3294-4afa-9d7f-0fbdce898a1a] POST /api/auth/signup
+[2025-05-02 23:27:08] INFO: [d1a48bd6-0f6b-4795-b694-15e18d0e15ba] POST /api/auth/signup
+[2025-05-02 23:27:57] INFO: [16714ce6-ebb5-4515-b1ad-1c3faa69b200] POST /api/auth/signup
+[2025-05-02 23:28:48] INFO: [b78d606d-44a2-4be1-8c4c-a935dc5db356] POST /api/auth/signup
+[2025-05-02 23:31:39] INFO: [42049070-c16f-4696-910d-1ef9cb45a896] POST /api/auth/signup
+[2025-05-02 23:33:37] INFO: [3d15b6de-f5a2-4077-b8c1-fbd2a6b6c535] POST /api/auth/signup
+[2025-05-02 23:33:54] INFO: [fa9f1f81-2cfb-4666-ac21-4080b6def8f6] POST /api/auth/signup
+[2025-05-02 23:34:24] INFO: [97ed7b4b-3664-40c3-82db-567cc6a1b128] POST /api/auth/signup
+[2025-05-02 23:35:04] INFO: [7a50cd76-e4f0-46fa-9d13-38e1e31f06d0] POST /api/auth/signup
+[2025-05-02 23:35:38] INFO: [8b97f7b9-0edf-4b33-9462-c43dc19101fd] POST /signup
+[2025-05-02 23:36:05] INFO: [c98f490a-05e5-469b-b92f-ba891754e150] POST /signup
+[2025-05-02 23:36:14] INFO: [d24ad5b9-88cc-4072-b5d5-8f31883651d0] POST /signup
+[2025-05-02 23:36:34] INFO: [f37e23b3-1d99-475a-b49d-2464bb991b34] POST /api/auth
+[2025-05-02 23:36:54] INFO: [7a80747a-4de4-442c-9ffc-1fd30a6e0a4d] POST /api/auth/signup
+[2025-05-02 23:42:33] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:43:07] INFO: [fc5f73d6-8096-4954-b4f3-9460dd42b221] POST /api/auth/signup [object Object]
+[2025-05-02 23:43:45] INFO: [ef5a488b-8a5c-4f79-a5ac-26e127291eee] POST /api/auth/signup [object Object]
+[2025-05-02 23:44:13] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:44:18] INFO: [7892fdb2-b021-459b-9da9-b0f0fa412fb8] POST /api/auth/signup [object Object]
+[2025-05-02 23:45:17] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:46:13] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:47:20] INFO: [aabb86ec-37ac-43c5-b842-b29969bda2e2] POST /api/auth/signup [object Object]
+[2025-05-02 23:48:56] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:49:04] INFO: [03e648e0-ebfd-40ec-b64d-319f583e3905] POST /api/auth/signup [object Object]
+[2025-05-02 23:49:32] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:49:36] INFO: [0e7fdeb3-d6cc-4364-8add-b7822e755bb3] POST /api/auth/signup
+[2025-05-02 23:54:58] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:55:05] INFO: [ef098829-8c57-48dc-ba8d-c842e158ff6e] POST /api/auth/signup
+[2025-05-02 23:55:28] INFO: [84b3da45-6ad4-4b78-af14-77e2e33b9f9b] POST /api/auth/signup
+[2025-05-02 23:56:19] INFO: 🚀 API Gateway running on port 3000
+[2025-05-02 23:56:22] INFO: [530d3ffd-1d4f-4e5b-a7b3-2b0e23bdf956] POST /api/auth/signup
+[2025-05-03 00:02:14] INFO: [35ad9d7c-df45-4379-85c3-794225c01f52] POST /api/auth/signup
+[2025-05-03 00:06:01] INFO: [5d8fe5d3-2d83-4eeb-8278-dd510aa64abc] POST /api/auth/signup
+[2025-05-03 00:06:41] INFO: [d6e8b8d4-a7eb-4d15-a40d-49d1ec773711] POST /api/auth/signup
+[2025-05-03 00:07:19] INFO: [2fea6f35-9a88-4059-ab68-582fd4cdf059] POST /api/auth/signup
+[2025-05-03 19:47:35] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 19:51:42] INFO: [0b8d2eb9-039f-40e2-99f3-63ebe99403c2] POST /auth/login
+[2025-05-03 19:51:54] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 19:51:56] INFO: [3fce3afd-7a61-40a6-b220-3d45f2fecb07] POST /auth/login
+[2025-05-03 19:51:59] INFO: [227218a5-d70e-46e1-a448-241106b688c8] POST /auth/login
+[2025-05-03 19:52:00] INFO: [01af53ec-49af-46d8-a708-055eed98ea60] POST /auth/login
+[2025-05-03 19:52:11] INFO: [f792e782-26ca-47bb-b80d-10631f05a065] POST /api/auth/signup
+[2025-05-03 19:54:13] INFO: [8acb3ac2-57f3-4c3d-b630-470d27fd824d] POST /api/auth/signup
+[2025-05-03 19:55:02] INFO: [d834fbc2-7480-42fe-b875-55c9533065d9] POST /api/auth/signup
+[2025-05-03 19:56:07] INFO: [dcc29b77-ae8d-4470-a883-5642024a9e39] POST /api/auth/signup
+[2025-05-03 19:56:47] INFO: [079917d6-efad-4064-8840-0c405ab324f1] POST /api/auth/signup
+[2025-05-03 19:57:05] INFO: [af4741c7-903d-4973-9842-3d81f3301f9c] POST /api/auth/signup
+[2025-05-03 19:57:31] INFO: [69ff7a2e-8ab1-4406-a62b-5037566aa4a9] POST /api/auth/signup
+[2025-05-03 19:59:30] INFO: [745873be-3045-4f1c-b6e1-edf8ff19958c] POST /api/auth/signup
+[2025-05-03 20:22:52] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 20:23:00] INFO: [18c854f9-f176-4d30-80f9-ff2718985ca1] POST /api/auth/signup
+[2025-05-03 20:25:41] INFO: [4ea310c9-20b7-4eee-bd99-f6f06931f64e] POST /api/auth/signup
+[2025-05-03 20:27:27] INFO: [088ac429-9a26-4e8f-9c88-6b0a389931d1] POST /api/auth/signup
+[2025-05-03 20:27:40] INFO: [b4f8b563-6043-42ee-b8ff-45a46959a3f4] POST /api/auth/signup
+[2025-05-03 20:30:09] INFO: [cf5cb661-e036-4e26-8668-28f8f786cabe] POST /api/auth/signup
+[2025-05-03 20:30:36] INFO: [db798696-ecda-4e99-9ac5-a4245f99989c] POST /api/auth/signup
+[2025-05-03 20:54:23] INFO: [0ca10431-de3a-4762-a798-0c2c6609ae9b] POST /api/auth/signup
+[2025-05-03 20:55:00] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 20:55:08] INFO: [3745a85c-6fa6-478c-939a-c6f51b9751dd] POST /api/auth/signup
+[2025-05-03 21:01:03] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:03:01] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:03:04] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:03:09] INFO: [9e096ec4-0932-4615-a665-54ab5250477d] POST /api/auth/signup
+[2025-05-03 21:03:22] INFO: [456dfa95-e16d-498c-a023-a069f6c86c93] POST /api/auth/signup
+[2025-05-03 21:04:35] INFO: [d826615f-1255-4c07-ab4f-559c042b5243] POST /api/auth/signup
+[2025-05-03 21:05:30] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:05:34] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:05:39] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:05:44] INFO: [41199095-5338-4a95-9b2a-15ecaf14c56b] POST /api/auth/signup
+[2025-05-03 21:08:05] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:08:31] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:08:52] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:13:03] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:13:34] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:13:56] INFO: [69f8e714-cdfd-49d3-9e9c-f89d0185d493] POST /api/auth/signup
+[2025-05-03 21:14:26] INFO: [0cb2d692-2d03-4a0e-97f3-e109a242f615] POST /api/auth/signup
+[2025-05-03 21:14:53] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:15:01] INFO: [fb6d8032-f406-43d4-86a7-b5f802f85843] POST /api/auth/signup
+[2025-05-03 21:15:12] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:15:16] INFO: [e03a23e7-cccf-4b13-b7c1-e295e3ead49d] POST /api/auth/signup
+[2025-05-03 21:17:10] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:17:18] INFO: [b0226b0e-8836-489b-8489-9cc4ad17b41d] POST /api/auth/signup
+[2025-05-03 21:19:02] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:19:08] INFO: [4c9d4544-0a98-418c-b919-dd2ae53f8812] POST /api/auth/signup
+[2025-05-03 21:19:08] INFO: [4c9d4544-0a98-418c-b919-dd2ae53f8812] POST /api/auth/signup
+[2025-05-03 21:19:39] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:19:42] INFO: [3def665e-034c-40fe-ab43-5d81c3a6ac31] POST /api/auth/signup
+[2025-05-03 21:19:42] INFO: [3def665e-034c-40fe-ab43-5d81c3a6ac31] POST /api/auth/signup
+[2025-05-03 21:20:25] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:20:30] INFO: [c11003d1-eb94-4404-b2f4-bd3ee8be2bbb] POST /api/auth/signup
+[2025-05-03 21:22:20] INFO: [5303e47f-ba09-415a-bf50-453927ab65ee] POST /api/auth/signup
+[2025-05-03 21:22:36] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:22:40] INFO: [67e53bdb-4b9e-4f8e-8673-eafe58998ef2] POST /api/auth/signup
+[2025-05-03 21:22:49] INFO: [8283c624-4a59-4f32-898b-7664feb90111] POST /api/auth/signup
+[2025-05-03 21:23:20] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:23:27] INFO: [b3089744-0f41-4bec-b0eb-efc95ef66675] POST /api/auth/signup
+[2025-05-03 21:24:36] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:24:40] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:24:48] INFO: [a12a48da-fd23-4e18-be76-c4cc16ffb786] POST /api/auth/signup
+[2025-05-03 21:32:42] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:32:43] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:32:48] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:32:57] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:33:01] INFO: [e629f8dd-cf05-4600-bfe7-44aaa29d3d86] POST /api/auth/signup
+[2025-05-03 21:37:13] INFO: [b118c201-b2c8-49ab-98e2-69632b2f3d7f] POST /api/auth/signup
+[2025-05-03 21:37:16] INFO: [e5463e69-47df-4874-8bcb-a926bfa441d7] POST /api/auth/signup
+[2025-05-03 21:37:30] INFO: [e6a35fe3-f3e0-4a26-90be-4a705028f7bc] POST /api/auth/signup
+[2025-05-03 21:39:19] INFO: 🚀 API Gateway running on port 3000
+[2025-05-03 21:39:29] INFO: [43fbb975-df9f-49ab-af38-c4d1c6023731] POST /api/users/signup
+[2025-05-03 21:40:12] INFO: [6b6bb1f1-a4d4-439b-b50a-60bbfd49c86b] POST /api/users/auth/signup
