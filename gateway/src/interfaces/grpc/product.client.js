@@ -4,7 +4,7 @@ const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
 
 // Đường dẫn đến file product.proto
-const PROTO_PATH = path.resolve(__dirname, '../../proto/product.proto');
+const PROTO_PATH = path.resolve(__dirname, './product.proto');
 
 // Load proto file
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {

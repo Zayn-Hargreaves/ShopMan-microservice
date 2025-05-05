@@ -1,7 +1,7 @@
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
-const { GetProductsBySkuList } = require('./productGrpcHandler');
+const { GetProductsBySkuList,GetAllProducts } = require('./productGrpcHandler');
 
 const PROTO_PATH = path.join(__dirname, './product.proto');
 
@@ -13,6 +13,7 @@ function startGrpcServer() {
 
     server.addService(proto.ProductService.service, {
         GetProductsBySkuList,
+        GetAllProducts
     });
 
     server.bindAsync('0.0.0.0:50052', grpc.ServerCredentials.createInsecure(), () => {
