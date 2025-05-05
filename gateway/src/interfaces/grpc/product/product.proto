@@ -3,7 +3,19 @@ syntax = "proto3";
 package product;
 
 service ProductService {
+  rpc GetAllProducts (Empty) returns (GetAllProductsResponse);
+  rpc GetProductBySlug (GetProductBySlugRequest) returns (ProductDetail);
   rpc GetProductsBySkuList (GetProductsRequest) returns (GetProductsResponse);
+}
+
+message Empty {}
+
+message GetAllProductsResponse {
+  repeated ProductDetail products = 1;
+}
+
+message GetProductBySlugRequest {
+  string slug = 1;
 }
 
 message GetProductsRequest {
@@ -21,6 +33,8 @@ message ProductDetail {
   string productName = 3;
   float sku_price = 4;
   int32 sku_stock = 5;
+  string thumb = 6;
+  string slug = 7;
 }
 
 message GetProductsResponse {

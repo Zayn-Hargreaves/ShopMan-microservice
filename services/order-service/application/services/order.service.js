@@ -1,7 +1,7 @@
 const RepositoryFactory = require("../../infratructure/repository/RepositoryFactory");
 const Stripe = require("stripe");
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const { getProductListFromProductService } = require("../../interfaces/grpc/productClient")
+const { getProductListFromProductService } = require("../../interfaces/grpc/product/productClient")
 const { runProducer } = require("../../infratructure/rabbit mq/rabbitmq")
 const Joi = require("joi");
 const { NotFoundError, BadRequestError, ConflictError } = require("../../../user-service/shared/cores/error.response");
@@ -26,16 +26,17 @@ class OrderService {
     }
 
     static async fromCart({ userId, selectedItems = [] }) {
-
         this.validateFromCartInput({ userId, selectedItems });
 
         const lockList = [];
         let totalAmount = 0;
         const finalItems = [];
 
+        // Gọi gRPC ProductService để lấy thông tin sản phẩm
         const productInfoList = await getProductListFromProductService(
             selectedItems.map(({ productId, skuNo }) => ({ productId, skuNo }))
         );
+
         const productMap = Object.fromEntries(
             productInfoList.map(p => [`${p.productId}_${p.skuNo}`, p])
         );

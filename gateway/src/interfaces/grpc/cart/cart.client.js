@@ -1,9 +1,8 @@
-// interfaces/grpc/product.client.js
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
 
-const PROTO_PATH = path.join(__dirname, '../../proto/product.proto');
+const PROTO_PATH = path.join(__dirname, './cart.proto');
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
     keepCase: true,
@@ -12,11 +11,10 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
     defaults: true,
     oneofs: true,
 });
+const cartProto = grpc.loadPackageDefinition(packageDefinition).cart;
 
-const productProto = grpc.loadPackageDefinition(packageDefinition).product;
-
-const client = new productProto.ProductService(
-    'localhost:50051',
+const client = new cartProto.CartService(
+    'localhost:50054', // Cổng của Cart Service gRPC server
     grpc.credentials.createInsecure()
 );
 

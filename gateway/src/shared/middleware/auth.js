@@ -20,6 +20,7 @@ const authenticateToken = async (req, res, next) => {
             const exists = await RedisService.checkElementExistInRedisBloomFilter("blacklist_token", jti)
             if (exists) throw new UnauthorizedError("invalid request")
             req.userId = userId
+            req.refreshtoken = refreshtoken
             return next();
         } catch (error) {
             console.log(error)
@@ -30,10 +31,12 @@ const authenticateToken = async (req, res, next) => {
     if (accessToken) {
         try {
             const { userId, jti } = jwt.verify(accessToken, accessSecretKey);
-            req.userId = userId
+            
             if (!userId) {
                 throw new UnauthorizedError('invalid request');
             }
+            req.userId = userId
+            req.accessToken = accessToken
             return next();
         } catch (error) {
             throw new UnauthorizedError('invalid request::', error);

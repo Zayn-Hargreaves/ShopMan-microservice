@@ -7,6 +7,11 @@ require('dotenv').config();
 const attachRequestId = require('./src/shared/middleware/request-id');
 const logger = require('./src/shared/middleware/logger');
 const { connectProducer } = require('./src/infratructure/rabbitmq/producer');
+const userRoutes = require("./src/interfaces/rest/user.router")
+const CartRoutes = require("./src/interfaces/rest/cart.router")
+const OrderRoutes = require("./src/interfaces/rest/order.router")
+const ProductRoutes = require("./src/interfaces/rest/product.route");
+const authenticateToken = require('./src/shared/middleware/auth');
 const app = express();
 
 app.use(attachRequestId); // Add request ID
@@ -23,9 +28,12 @@ app.use(rateLimit({
     windowMs: 60 * 1000,
     max: 100
 }));
-// api-gateway/index.js
-require('./src/interfaces/rest/dynamic.routes')(app);
-require('./src/interfaces/rest/index.routes')(app)
+
+app.use("/user",userRoutes)
+app.use("/product",ProductRoutes)
+app.use(authenticateToken)
+app.use("/cart", CartRoutes)
+app.use("/Order", OrderRoutes)
 
 
 

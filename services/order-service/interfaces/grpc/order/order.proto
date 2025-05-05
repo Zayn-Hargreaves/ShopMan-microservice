@@ -5,11 +5,17 @@ package order;
 service OrderService {
   rpc FromCart (FromCartRequest) returns (FromCartResponse);
   rpc BuyNow (BuyNowRequest) returns (BuyNowResponse);
+  rpc Confirm (ConfirmRequest) returns (ConfirmResponse);
 }
 
 message FromCartRequest {
   string userId = 1;
   repeated ProductItem items = 2;
+}
+
+message BuyNowRequest {
+  string userId = 1;
+  ProductItem item = 2;
 }
 
 message ProductItem {
@@ -21,4 +27,21 @@ message ProductItem {
 message FromCartResponse {
   bool success = 1;
   string message = 2;
-}   
+  string orderId = 3;
+}
+
+message BuyNowResponse {
+  bool success = 1;
+  string message = 2;
+  string orderId = 3;
+}
+
+message ConfirmRequest {
+  string orderId = 1;
+  string userId = 2;
+}
+
+message ConfirmResponse {
+  bool success = 1;
+  string message = 2;
+}

@@ -1,6 +1,6 @@
 const { NotFoundError } = require("../../../user-service/shared/cores/error.response")
 const RepositoryFactory = require("../../infratructure/repository/RepositoryFactory")
-const getProductListFromProductService = require("../../interfaces/grpc/product.grpcClient.js");
+const getProductListFromProductService = require("../../interfaces/grpc/product/product.grpcClient.js");
 class CartService {
 
     static async getCart(UserId) {
