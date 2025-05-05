@@ -1,8 +1,6 @@
-const RepositoryFactory = require("../models/repositories/repositoryFactory");
+const RepositoryFactory = require("../../infratructure/repository/RepositoryFactory");
 const Stripe = require("stripe");
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const RedisService = require("./Redis.Service");
-const EmailService = require("./Email.service")
 const { getProductListFromProductService } = require("../../interfaces/grpc/productClient")
 const { runProducer } = require("../../infratructure/rabbit mq/rabbitmq")
 class OrderService {
@@ -32,6 +30,7 @@ class OrderService {
 
                 const lock = await RedisService.acquireLock({
                     productID: productId,
+                    skuNo,
                     cartID: userId,
                     quantity,
                     timeout: 900,
@@ -76,6 +75,7 @@ class OrderService {
     static async buyNow({ userId, productId, skuNo, quantity }) {
         const lock = await RedisService.acquireLock({
             productID: productId,
+            skuNo,
             cartID: userId,
             quantity,
             timeout: 900,
@@ -116,7 +116,6 @@ class OrderService {
         }
     }
 
-
     static async confirmPayment({ userId, paymentIntentId }) {
         await RepositoryFactory.initialize();
         const OrderRepo = RepositoryFactory.getRepository("OrderRepository");
@@ -133,21 +132,22 @@ class OrderService {
             await RedisService.releaseLock({ key });
         }
 
-        // 3. Lấy orderItems từ metadata
+        // 3. Lấy orderItems từ metadata (nên đã có cả skuNo từ bước fromCart)
         let orderItems;
         try {
             orderItems = JSON.parse(paymentIntent.metadata.orderItems || "[]");
         } catch (e) {
-            throw new Error("Invalid order item data :::", e);
+            throw new Error("Invalid order item data",e);
         }
 
         if (!orderItems.length) throw new Error("No items in order metadata");
 
+        // 4. Tính tổng và chuẩn bị chi tiết đơn hàng
         let orderTotal = 0;
         const orderDetailsData = [];
 
         for (const item of orderItems) {
-            const { productId, quantity, unitPrice } = item;
+            const { productId, skuNo, quantity, unitPrice } = item;
             const itemTotal = parseFloat(unitPrice) * quantity;
             orderTotal += itemTotal;
 
@@ -158,7 +158,6 @@ class OrderService {
             });
         }
 
-        // 5. Tạo đơn hàng
         const order = await OrderRepo.createOrder({
             UserId: userId,
             TotalPrice: orderTotal,
@@ -186,6 +185,7 @@ class OrderService {
             runProducer(topic, message, EXCHANGE, 'notificationEventsQueue', DLX_EXCHANGE, DLX_ROUTING_KEY),
             runProducer(topic, message, EXCHANGE, 'productEventsQueue', DLX_EXCHANGE, DLX_ROUTING_KEY),
         ]);
+
         return {
             orderCreated: true,
             paymentIntentId,
@@ -193,7 +193,6 @@ class OrderService {
             total: orderTotal,
         };
     }
-
 
 }
 

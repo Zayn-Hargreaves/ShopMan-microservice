@@ -1,10 +1,10 @@
 // interfaces/events/consumers/orderCreated.consumer.js
 
-const {runConsumer} = require("../../infratructure/rabbitmq/rabbitmq");
-const CartService = require("../../application/services/cart.service");
+const {runConsumer} = require("./rabbitmq");
+const ProductService = require("../../application/service/product.service");
 
 const EXCHANGE = "userEvents";
-const QUEUE = "cartEventsQueue";
+const QUEUE = "productEventsQueue";
 const DLX_EXCHANGE = "userEventsDLX";
 const DLX_ROUTING_KEY = "userEventsDLX.routingKey";
 const ROUTING_KEY = "order.created";
@@ -17,7 +17,7 @@ async function startOrderCreatedConsumer() {
         DLX_ROUTING_KEY,
         ROUTING_KEY,
         async (message) => {
-            await CartService.RemoveOrderdItem(message);
+            await ProductService.RemoveOrderdItem(message);
         }
     );
 }

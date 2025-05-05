@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const productRoutes = require("./interfaces/rest/product.route");
 const { startOrderCreatedConsumer } = require('./interefaces/rabbit mq/orderCreated.consumer');
 
 

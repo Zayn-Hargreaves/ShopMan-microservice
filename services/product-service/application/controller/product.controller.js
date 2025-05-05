@@ -2,10 +2,10 @@ const { OkResponse } = require("../../../user-service/shared/cores/success.respo
 const ProductService = require("../service/product.service")
 class ProductController{
     getAllProduct = async(req, res, next)=>{
-        const {lastSortValues, pageSize, isAndroid} = req.query
+        const {page, limit} = req.params
         new OkResponse({
             message:"get all product success",
-            metadata: await ProductService.getListProduct({lastSortValues,pageSize,isAndroid})
+            metadata: await ProductService.getListProduct(page, limit)
         }).send(res)
     }
     getProductDetail = async(req, res, next)=>{

@@ -103,4 +103,4 @@ const runConsumer = async (notiExchange, notiQueue, notiExchangeDLX, notiRouting
 
 
 
-module.exports = { connectRabbitMQ, getChannel, runProducer };
+module.exports = { connectRabbitMQ, getChannel, runProducer, runConsumer };

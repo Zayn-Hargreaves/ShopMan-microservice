@@ -1,7 +1,4 @@
-const AddressRepository = require("./address.repo")
-const OtpRepository = require("./opt.repo")
-const UserRepository = require("./user.repo")
-const initializeModels = require("./models/index")
+const ProductRepository = require("../../application/models/Products.model")
 class RepositoryFactory {
     constructor() {
         this.models = null;
@@ -12,11 +9,7 @@ class RepositoryFactory {
         if (!this.models) {
             this.models = await initializeModels();
             this.repositories = {
-                AddressRepository: new AddressRepository(this.models),
-
-                OtpRepository: new OtpRepository(this.models),
-
-                UserRepository: new UserRepository(this.models),
+               ProductRepository : new ProductRepository(this.models)
 
             };
         }

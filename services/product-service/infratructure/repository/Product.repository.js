@@ -1,53 +1,94 @@
-
 class ProductRepository {
     constructor(models) {
-        this.Product = models.Product
-        this.Inventories = models.Inventories
-        this.Sku = models.Sku
-        this.SkuAttr = models.SkuAttr
-        this.SkuSpecs = models.SkuSpecs
-        this.SpuToSku = models.SpuToSku
+        this.Product = models.Product;
+        this.Inventories = models.Inventories;
+        this.Sku = models.Sku;
+        this.SkuAttr = models.SkuAttr;
+        this.SkuSpecs = models.SkuSpecs;
+        this.SpuToSku = models.SpuToSku;
     }
+
     async getSkuAttrsBySkuNos(skuNos) {
-        return this.SkuAttr.findAll({ where: { sku_no: skuNos } });
+        return this.SkuAttr.findAll({
+            where: { sku_no: skuNos }
+        });
     }
+
     async getProductById(productId) {
         return this.Product.findByPk(productId);
     }
-    async findBySlug(slug){
+
+    async findBySlug(slug) {
         return this.Product.findOne({
-            where:{
-                slug:slug
-            }
-        })
+            where: { slug }
+        });
     }
-    async findAllSpuToSku(ProductId){
-        return await this.SpuToSku.findAll({
-            where:{
-                ProductId
-            }
-        })
+
+    async findAllSpuToSku(ProductId) {
+        return this.SpuToSku.findAll({
+            where: { ProductId }
+        });
     }
-    async findAllSku(skuNos){
-        return await this.Sku.findAll({
-            where:{
-                sku_no:skuNos
-            }
-        })
+
+    async findAllSku(skuNos) {
+        return this.Sku.findAll({
+            where: { sku_no: skuNos }
+        });
     }
-    async findAllSkuAttr(skuNos){
-        return await this.SkuAttr.findAll({
-            where:{
-                sku_no:skuNos
-            }
-        })
+
+    async findAllSkuAttr(skuNos) {
+        return this.SkuAttr.findAll({
+            where: { sku_no: skuNos }
+        });
     }
-    async findAllSkuSpecs(SkuId){
-        return await this.SkuSpecs.findAll({
-            SkuId
-        })
+
+    async findAllSkuSpecs(SkuId) {
+        return this.SkuSpecs.findAll({
+            where: { SkuId }
+        });
     }
+
     
+    async increaseProductSaleCount(ProductId, quantity) {
+        return this.Product.increment("sale_count", {
+            by: quantity,
+            where: { id: ProductId }
+        });
+    }
+
+    async decrementInventory({ ProductId, ShopId, quantity }) {
+        const inventory = await this.Inventories.findOne({
+            where: {
+                ProductId,
+                ShopId
+            }
+        });
+
+        if (!inventory) throw new Error(`Inventory not found for ProductId ${ProductId}`);
+
+        if (inventory.inven_quantity < quantity) {
+            throw new Error(`Insufficient stock for ProductId ${ProductId}`);
+        }
+
+        inventory.inven_quantity -= quantity;
+        await inventory.save();
+
+        return inventory;
+    }
+
+    async decrementSkuStock(skuNo, quantity) {
+        const skuAttr = await this.SkuAttr.findOne({ where: { sku_no: skuNo } });
+
+        if (!skuAttr) throw new Error(`SKU ${skuNo} not found`);
+        if (skuAttr.sku_stock < quantity) {
+            throw new Error(`Insufficient stock for SKU ${skuNo}`);
+        }
+
+        skuAttr.sku_stock -= quantity;
+        await skuAttr.save();
+
+        return skuAttr;
+    }
 }
 
-module.exports = ProductRepository
+module.exports = ProductRepository;

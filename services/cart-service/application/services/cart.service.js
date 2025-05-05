@@ -66,6 +66,12 @@ class CartService {
         return { message: "Updated successfully" };
     }
 
+    static async createCartIfNotExist(UserId){
+        await RepositoryFactory.initialize()
+        const CartRepo = RepositoryFactory.getRepository()
+        return await CartRepo.getOrCreateCart(UserId)
+        
+    }
 
     static async RemoveOrderdItem({ userId, orderid, orderItems = [] }) {
         await RepositoryFactory.initialize()

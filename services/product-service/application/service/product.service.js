@@ -1,5 +1,4 @@
 const { NotFoundError } = require("../../../user-service/shared/cores/error.response");
-const productRepository = require("../../infratructure/edb/productRepository");
 const RepositoryFactory = require("../../infratructure/repository/repositoryFactory")
 class ProductService {
     static async getProductDetail(slug) {
@@ -34,13 +33,11 @@ class ProductService {
         };
     }
 
-    static async getListProduct({ lastSortValues, pageSize, isAndroid }) {
-        const result = await productRepository.searchProducts({
-            lastSortValues,
-            pageSize,
-            isAndroid
-        })
-        return result
+    static async getListProduct(page, limit) {
+        await RepositoryFactory.initialize()
+        const ProductRepository = RepositoryFactory.getRepository("ProductRepository")
+        return await ProductRepository.getPaginatedProducts(page, limit)
+        
     }
 
 
@@ -72,12 +69,40 @@ class ProductService {
         return result;
     }
 
-    static async updateProductSaleCount(id, count){
-    await RepositoryFactory.initialize()
-    const ProductRepository = await RepositoryFactory.getRepository("ProductRepository")
-    return await ProductRepository.updateProductSaleCount(id, count)
+    async handleOrderCreated({ userId, orderId, orderItems = [] }) {
+        await RepositoryFactory.initialize();
+        const productRepo = RepositoryFactory.getRepository("ProductRepository");
+
+        for (const item of orderItems) {
+            const { productId, skuNo, quantity } = item;
+
+            try {
+                // Trừ tồn kho cấp Product (theo ShopId)
+                const product = await productRepo.getProductById(productId);
+                if (!product) throw new Error(`Product ${productId} not found`);
+
+                await productRepo.decrementInventory({
+                    ProductId: productId,
+                    ShopId: product.ShopId,
+                    quantity
+                });
+
+                // Trừ tồn kho cấp SKU (nếu có)
+                await productRepo.decrementSkuStock(skuNo, quantity);
+
+                // Tăng sale count
+                await productRepo.increaseProductSaleCount(productId, quantity);
+
+                console.log(`✅ Processed order item: productId=${productId}, skuNo=${skuNo}, quantity=${quantity}`);
+            } catch (err) {
+                console.error(`❌ Failed to process order item [${productId} - ${skuNo}]:`, err.message);
+            }
+        }
+
+        console.log(`✅ [product-service] Inventory and sale updated for order ${orderId}`);
+    }
 }
-    
-}
+
+
 
 module.exports = ProductService

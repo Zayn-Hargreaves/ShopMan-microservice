@@ -8,9 +8,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node --watch server.js"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.13.3",
+    "@grpc/proto-loader": "^0.7.15",
+    "amqplib": "^0.10.8",
     "dotenv": "^16.5.0",
     "elasticsearch": "^16.7.3",
     "express": "^5.1.0",

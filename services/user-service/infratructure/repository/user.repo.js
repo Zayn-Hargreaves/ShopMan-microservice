@@ -1,5 +1,5 @@
 const { getUnselectData } = require("../../shared/utils/index");
-const User = require("../../domain/User"); // Import domain entity User
+const User = require("../../domain/user"); // Import domain entity User
 
 class UserRepository {
     constructor(models) {
