@@ -7,7 +7,10 @@ async function GetProductsBySkuList(call, callback) {
     callback(null, { products });
   } catch (err) {
     console.error(err);
-    callback(err);
+    callback({
+      code: grpc.status.NOT_FOUND,
+      message: `Error fetching products::::${err.message}`
+    });
   }
 }
 

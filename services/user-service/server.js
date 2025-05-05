@@ -14,7 +14,6 @@ app.use((req, res, next) => {
     next();
 });
 
-const router = express.Router()
 
 
 app.use(express.json());

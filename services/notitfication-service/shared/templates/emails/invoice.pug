@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Invoice - Your Order is Confirmed!
+  body(style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9;")
+    .email-container(style="max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);")
+      .email-header(style="text-align: center; margin-bottom: 20px;")
+        img.logo(src=logo alt="Logo" style="max-width: 150px;")
+
+      .email-body
+        h1(style="color: #333; font-size: 24px;") Order Confirmation
+        p(style="font-size: 16px; color: #555;") Hello #{firstName}, your order has been successfully processed!
+
+        .invoice-details
+          h2(style="font-size: 20px; color: #333; margin-top: 30px;") Order Details
+          p(style="font-size: 14px; color: #444;") Order ID: #{orderId}
+          p(style="font-size: 14px; color: #444;") Order Date: #{orderDate}
+          p(style="font-size: 14px; color: #444;") Payment Method: #{paymentMethod}
+
+          table.order-table(style="width: 100%; border-collapse: collapse; margin-top: 20px;")
+            thead
+              tr
+                th(style="border-bottom: 2px solid #ddd; text-align: left; padding: 8px;") Product
+                th(style="border-bottom: 2px solid #ddd; text-align: left; padding: 8px;") Quantity
+                th(style="border-bottom: 2px solid #ddd; text-align: left; padding: 8px;") Price
+                th(style="border-bottom: 2px solid #ddd; text-align: left; padding: 8px;") Total
+            tbody
+              each item in orderItems
+                tr
+                  td(style="padding: 8px; border-bottom: 1px solid #eee;") #{item.name}
+                  td(style="padding: 8px; border-bottom: 1px solid #eee;") #{item.quantity}
+                  td(style="padding: 8px; border-bottom: 1px solid #eee;") $#{item.price}
+                  td(style="padding: 8px; border-bottom: 1px solid #eee;") $#{item.total}
+
+          .total-amount(style="text-align: right; margin-top: 20px;")
+            h3(style="font-size: 18px; color: #000;") Total: $#{orderTotal}
+
+        a.btn(href=invoiceLink style="display: inline-block; margin-top: 30px; padding: 12px 20px; background-color: #007bff; color: #fff; text-decoration: none; border-radius: 4px;") View Full Invoice
+      
+      .email-footer(style="margin-top: 40px; text-align: center; font-size: 12px; color: #aaa;")
+        p Thank you for shopping with us!

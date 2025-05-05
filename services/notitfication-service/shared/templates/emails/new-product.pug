@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title New Product Alert!
+    link(rel="stylesheet" href="styles.css")
+  body
+    .email-container
+      .email-header
+        img.logo(src=logo alt="Logo")
+      .email-body
+        h1 New Product Available!
+        p Hello #{firstName}, we have just launched a new product that you might love!
+        
+        .product-card
+          img.product-img(src=productImage alt=productName)
+          .product-info
+            h2 #{productName}
+            p Price: #{productPrice}
+            p #{productDescription}
+        
+        a.btn(href=productLink) View Product
+      
+      .email-footer
+        p You received this email because you follow our shop.
+        p If you don’t want to receive these updates, you can unsubscribe.

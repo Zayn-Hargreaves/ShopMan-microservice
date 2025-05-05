@@ -10,7 +10,7 @@ class RedisService {
 
     static async addElementToRedisBloomFilter(filterName, value, falsePositiveRate = 0.01, capacity = 1000) {
         const redis = await getRedis();
-        const exist = await redis.exists(filterName); // Sửa "exist" thành "exists"
+        const exist = await redis.exists(filterName);
         if (!exist) {
             await this.createRedisBloomFilter(filterName, falsePositiveRate, capacity);
         }
@@ -30,6 +30,20 @@ class RedisService {
     static async checkMultiElementExistInRedisBloomFilter(filterName, Elements = []) {
         const redis = await getRedis();
         return redis.call("BF.MEXISTS", filterName, ...Elements);
+    }
+    static async cacheData(key, value, ttl = 3600) {
+        const redis = await getRedis()
+        try {
+            const serializedValue = JSON.stringify(value)
+            return await redis.set(key, serializedValue, "EX", ttl)
+        } catch (error) {
+            throw new BadGatewayError(`Error caching data for key ${key}:`, error)
+        }
+    }
+    static async getCachedData(key) {
+        const redis = await getRedis()
+        const data = await redis.get(key)
+        return JSON.parse(data)
     }
 }
 

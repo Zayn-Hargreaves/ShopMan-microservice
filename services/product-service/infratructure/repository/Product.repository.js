@@ -8,12 +8,6 @@ class ProductRepository {
         this.SpuToSku = models.SpuToSku;
     }
 
-    async getSkuAttrsBySkuNos(skuNos) {
-        return this.SkuAttr.findAll({
-            where: { sku_no: skuNos }
-        });
-    }
-
     async getProductById(productId) {
         return this.Product.findByPk(productId);
     }

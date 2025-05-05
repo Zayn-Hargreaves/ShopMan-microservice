@@ -1,7 +1,7 @@
 const amqp = require('amqplib');
 
 let channel = null;
-
+const NotificationService = require("../../application/services/notification.service")
 const connectRabbitMQ = async () => {
     try {
         const connection = await amqp.connect(process.env.RABBITMQ_URL);
@@ -9,6 +9,8 @@ const connectRabbitMQ = async () => {
         console.log('Connected to RabbitMQ!');
     } catch (error) {
         console.error('Failed to connect to RabbitMQ:', error);
+    }finally {
+        await connection.close();
     }
 };
 
@@ -33,6 +35,7 @@ const runProducer = async (topic, message, notiExchange, notiQueue, notiExchange
 
         const queueResult = await channel.assertQueue(notiQueue, {
             durable:true,
+            maxLength: 1000,
             deadLetterExchange:notiExchangeDLX,
             deadLetterRoutingKey:notiRoutingKeyDLX
         })
@@ -82,7 +85,7 @@ const runConsumer = async (notiExchange, notiQueue, notiExchangeDLX, notiRouting
                 console.log(`✅ Received message [${routingKey}]:`, data);
 
                 try {
-                    await NotificationService.handleUserCreated(data);  // 👉 logic ở tầng Application
+                    await NotificationService.handleUserCreated(data);
                     channel.ack(msg);
                 } catch (error) {
                     console.error("❌ Failed to process message:", error);

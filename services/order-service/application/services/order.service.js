@@ -3,9 +3,31 @@ const Stripe = require("stripe");
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const { getProductListFromProductService } = require("../../interfaces/grpc/productClient")
 const { runProducer } = require("../../infratructure/rabbit mq/rabbitmq")
+const Joi = require("joi");
+const { NotFoundError, BadRequestError, ConflictError } = require("../../../user-service/shared/cores/error.response");
 class OrderService {
+    static validateFromCartInput(data) {
+        const schema = Joi.object({
+            userId: Joi.string().required(),
+            selectedItems: Joi.array()
+                .items(
+                    Joi.object({
+                        productId: Joi.string().required(),
+                        skuNo: Joi.string().required(),
+                        quantity: Joi.number().integer().min(1).required(),
+                    })
+                )
+                .min(1)
+                .required(),
+        });
+
+        const { error } = schema.validate(data);
+        if (error) throw new Error(`Input validation error: ${error.message}`);
+    }
+
     static async fromCart({ userId, selectedItems = [] }) {
-        if (!selectedItems.length) throw new Error("No products selected for checkout");
+
+        this.validateFromCartInput({ userId, selectedItems });
 
         const lockList = [];
         let totalAmount = 0;
@@ -19,13 +41,13 @@ class OrderService {
         );
 
         try {
-            for (const item of selectedItems) {
+            const productProcessing = selectedItems.map(async (item) => {
                 const { productId, skuNo, quantity } = item;
                 const key = `${productId}_${skuNo}`;
                 const productDetail = productMap[key];
 
                 if (!productDetail || productDetail.sku_stock < quantity) {
-                    throw new Error(`Product ${productId} - ${skuNo} is out of stock or unavailable`);
+                    throw new NotFoundError(`Product ${productId} - ${skuNo} is out of stock or unavailable`);
                 }
 
                 const lock = await RedisService.acquireLock({
@@ -35,7 +57,7 @@ class OrderService {
                     quantity,
                     timeout: 900,
                 });
-                if (!lock) throw new Error(`Product ${productId} is being checked out by another user.`);
+                if (!lock) throw new NotFoundError(`Product ${productId} is being checked out by another user.`);
                 lockList.push(lock);
 
                 const unitPrice = parseFloat(productDetail.sku_price || 0);
@@ -48,7 +70,9 @@ class OrderService {
                     itemTotal,
                     productName: productDetail.productName,
                 });
-            }
+            });
+
+            await Promise.all(productProcessing);
 
             const paymentIntent = await stripe.paymentIntents.create({
                 amount: Math.round(totalAmount * 100),
@@ -70,9 +94,20 @@ class OrderService {
             }
         }
     }
+    static validateBuyNowInput(data) {
+        const schema = Joi.object({
+            userId: Joi.string().required(),
+            productId: Joi.string().required(),
+            skuNo: Joi.string().required(),
+            quantity: Joi.number().integer().min(1).required(),
+        });
 
+        const { error } = schema.validate(data);
+        if (error) throw new Error(`Input validation error: ${error.message}`);
+    }
 
     static async buyNow({ userId, productId, skuNo, quantity }) {
+        this.validateBuyNowInput({ userId, productId, skuNo, quantity });
         const lock = await RedisService.acquireLock({
             productID: productId,
             skuNo,
@@ -81,13 +116,13 @@ class OrderService {
             timeout: 900,
         });
 
-        if (!lock) throw new Error(`Product ${productId} is being processed by another user.`);
+        if (!lock) throw new NotFoundError(`Product ${productId} is being processed by another user.`);
 
         try {
             const [productDetail] = await getProductListFromProductService([{ productId, skuNo }]);
 
             if (!productDetail || productDetail.sku_stock < quantity) {
-                throw new Error("Product not available or insufficient stock");
+                throw new NotFoundError("Product not available or insufficient stock");
             }
 
             const unitPrice = parseFloat(productDetail.sku_price || 0);
@@ -123,7 +158,7 @@ class OrderService {
         // 1. Kiểm tra trạng thái thanh toán
         const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
         if (!paymentIntent || paymentIntent.status !== "succeeded") {
-            throw new Error("Payment not completed or invalid");
+            throw new BadRequestError("Payment not completed or invalid");
         }
 
         // 2. Gỡ khóa Redis
@@ -137,10 +172,10 @@ class OrderService {
         try {
             orderItems = JSON.parse(paymentIntent.metadata.orderItems || "[]");
         } catch (e) {
-            throw new Error("Invalid order item data",e);
+            throw new ConflictError("Invalid order item data", e);
         }
 
-        if (!orderItems.length) throw new Error("No items in order metadata");
+        if (!orderItems.length) throw new ConflictError("No items in order metadata");
 
         // 4. Tính tổng và chuẩn bị chi tiết đơn hàng
         let orderTotal = 0;

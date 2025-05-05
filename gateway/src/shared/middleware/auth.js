@@ -1,17 +1,44 @@
-// shared/middleware/auth.js
 const jwt = require('jsonwebtoken');
+const { NOTACCEPTABLE, UnauthorizedError } = require('../cores/error.response');
+const RedisService = require("../../application/redis.service")
+const authenticateToken = async (req, res, next) => {
+    const authorization = req.headers['authorization'];
 
-function authenticateToken(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Format: Bearer xxx
+    let accessToken
 
-    if (!token) return res.sendStatus(401); // No token provided
+    if (authorization) {
+        accessToken = authorization.split(' ')[1];
+    }
 
-    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-        if (err) return res.sendStatus(403); // Token invalid
-        req.user = user;
-        next();
-    });
+    const refreshtoken = req.headers['x-rtoken-id'];
+    if (!accessToken && !refreshtoken) {
+        throw new UnauthorizedError('invalid request');
+    }
+    if (refreshtoken) {
+        try {
+            const { userId, jti } = jwt.verify(refreshtoken, refreshSecretKey);
+            const exists = await RedisService.checkElementExistInRedisBloomFilter("blacklist_token", jti)
+            if (exists) throw new UnauthorizedError("invalid request")
+            req.userId = userId
+            return next();
+        } catch (error) {
+            console.log(error)
+            throw new UnauthorizedError('invalid request::', error);
+        }
+    }
+
+    if (accessToken) {
+        try {
+            const { userId, jti } = jwt.verify(accessToken, accessSecretKey);
+            req.userId = userId
+            if (!userId) {
+                throw new UnauthorizedError('invalid request');
+            }
+            return next();
+        } catch (error) {
+            throw new UnauthorizedError('invalid request::', error);
+        }
+    }
 }
 
 module.exports = authenticateToken;

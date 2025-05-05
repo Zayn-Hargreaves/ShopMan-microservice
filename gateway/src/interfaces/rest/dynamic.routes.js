@@ -15,7 +15,12 @@ module.exports = function (app) {
             createProxyMiddleware({
                 target: route.target,
                 changeOrigin: true,
-                pathRewrite: { '^/api': '' }
+                pathRewrite: { '^/api': '' },
+                onProxyReq: (proxyReq, req, res) => {
+                    if (req.user) {
+                        proxyReq.setHeader('x-user-id', req.userId);
+                    }
+                }
             })
         )
 

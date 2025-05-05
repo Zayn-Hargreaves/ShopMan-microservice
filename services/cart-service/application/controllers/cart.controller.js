@@ -2,7 +2,7 @@ const { OkResponse } = require("../../shared/cores/success.response.js")
 const CartService = require("../services/cart.service.js")
 class CartController {
     getCart = async (req, res, next) => {
-        const userId = req.userId
+        const userId = req.headers['x-user-id'];
         new OkResponse({
             message: "get cart success",
             metadata: await CartService.getCart(userId)
@@ -11,7 +11,7 @@ class CartController {
 
     addProductToCart = async (req, res, next) => {
         const { ProductId, skuNo, quantity } = req.query
-        const userId = req.userId
+        const userId = req.headers['x-user-id'];
         new OkResponse({
             message: "add product to cart success",
             metadata: await CartService.addProductToCart(userId, ProductId, skuNo, parseInt(quantity))
@@ -20,7 +20,7 @@ class CartController {
 
     updateProductToCart = async (req, res, next) => {
         const { ProductId, skuNo, quantity } = req.query
-        const userId = req.userId
+        const userId = req.headers['x-user-id'];
         new OkResponse({
             message: 'update product to cart success',
             metadata: await CartService.updateProductToCart(userId, ProductId, skuNo, parseInt(quantity))

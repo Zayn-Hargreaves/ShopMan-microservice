@@ -23,11 +23,9 @@ app.use(rateLimit({
     windowMs: 60 * 1000,
     max: 100
 }));
-console.log("index.js:27")
 // api-gateway/index.js
 require('./src/interfaces/rest/dynamic.routes')(app);
 require('./src/interfaces/rest/index.routes')(app)
-console.log("index.js:31")
 
 
 
