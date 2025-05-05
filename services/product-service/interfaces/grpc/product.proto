@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package product;
+
+service ProductService {
+  rpc GetProductsBySkuList (GetProductsRequest) returns (GetProductsResponse);
+}
+
+message GetProductsRequest {
+  repeated ProductSkuInput items = 1;
+}
+
+message ProductSkuInput {
+  int32 productId = 1;
+  string skuNo = 2;
+}
+
+message ProductDetail {
+  int32 productId = 1;
+  string skuNo = 2;
+  string productName = 3;
+  float sku_price = 4;
+  int32 sku_stock = 5;
+  string thumb= 6
+}
+
+message GetProductsResponse {
+  repeated ProductDetail products = 1;
+}

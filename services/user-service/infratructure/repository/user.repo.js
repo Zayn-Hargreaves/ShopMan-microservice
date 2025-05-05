@@ -1,77 +1,65 @@
 const { getUnselectData } = require("../../shared/utils/index");
+const User = require("../../domain/User"); // Import domain entity User
 
 class UserRepository {
     constructor(models) {
-        this.User = models.User;
-        this.Cart = models.Cart;
-        this.Address = models.Address;
+        this.UserModel = models.User;
     }
 
     async findByEmail(email) {
-        return await this.User.findOne({
+        const userData = await this.UserModel.findOne({
             where: { email },
-            raw:true
+            raw: true
         });
+        if (!userData) return null;
+
+        return new User(userData);
     }
 
     async findById(id) {
-        return await this.User.findByPk(id, {
+        const userData = await this.UserModel.findByPk(id, {
             attributes: getUnselectData(['password']),
-            raw:true
+            raw: true
         });
+        if (!userData) return null;
+
+        return new User(userData);
     }
-    
-    async findByIdWithCart(id) {
-        return await this.User.findByPk(id, {
-            include: {
-                model: this.Cart,
-                as: 'cart'
-            },
-            attributes: getUnselectData(['password']),
-            raw:true
-        });
-    }
-    async getUserProfile(id){
-        return await this.User.findOne({
-            where: { id },
-            attributes: getUnselectData(['password']),
-            include: {
-                model: this.Address,
-                as: 'address',
-                where:{
-                    address_type:'main',
-                },
-                required: false,
-                raw:true
-            }
-        })
-    }
+
     async findByGoogleId(googleId, email) {
-        return await this.User.findOne({
-            $or: [{ googleId }, { email }],
+        const userData = await this.UserModel.findOne({
+            where: { $or: [{ googleId }, { email }] },
             attributes: getUnselectData(['password']),
-            raw:true
+            raw: true
         });
+        if (!userData) return null;
+
+        return new User(userData);
     }
 
-    async updatePassword(id, password ) {
-        return await this.User.update({ password: password }, { where: { id } });
+    async updatePassword(id, password) {
+        return await this.UserModel.update({ password }, { where: { id } });
     }
 
-    async createUser({name, email, password = null, googleId= null , status = 'active' }) {
-        return await this.User.create({ name, email, password, status,googleId });
+    async createUser({ name, email, password = null, googleId = null, status = 'active' }) {
+        const userData = await this.UserModel.create({ name, email, password, status, googleId });
+
+        return new User(userData.get({ plain: true }));
     }
-    async updateUserProfile(UserId,{name,phone, avatar}){
-        return await this.User.update({
+
+    async updateUserProfile(UserId, { name, phone, avatar }) {
+        await this.UserModel.update({
             name,
             phone,
             avatar,
-        },{
-            where:{
-                id:UserId
+        }, {
+            where: {
+                id: UserId
             }
-        })
+        });
+
+        return this.findById(UserId);
     }
 }
 
-module.exports =UserRepository
+module.exports = UserRepository;

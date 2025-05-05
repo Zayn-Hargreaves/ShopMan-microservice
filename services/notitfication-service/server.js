@@ -1,23 +1,30 @@
-// gia lap server
-// tạm file test: product-service/server.js
-const grpc = require('@grpc/grpc-js');
-const protoLoader = require('@grpc/proto-loader');
-const path = require('path');
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const productRoutes = require("./interfaces/rest/product.route");
+const { startOrderCreatedConsumer } = require('./interefaces/rabbit mq/orderCreated.consumer');
 
-const PROTO_PATH = path.join(__dirname, '../proto/product.proto');
-const packageDefinition = protoLoader.loadSync(PROTO_PATH);
-const productProto = grpc.loadPackageDefinition(packageDefinition).product;
 
-const server = new grpc.Server();
-
-server.addService(productProto.ProductService.service, {
-    GetProduct: (call, callback) => {
-        const id = call.request.id;
-        callback(null, { id, name: 'Sản phẩm mẫu', price: 99000 });
-    },
+app.use((err, req, res, next) => {
+    console.log('🛑 JSON parse error?', err.message);
+    next(err);
+});
+app.use((req, res, next) => {
+    console.log('🔍 Request received:', req.method, req.originalUrl);
+    next();
 });
 
-server.bindAsync('0.0.0.0:50051', grpc.ServerCredentials.createInsecure(), () => {
-    console.log('🟢 gRPC product-service running on port 50051');
-    server.start();
+
+
+
+app.use(express.json());
+
+async function bootstrap() {
+    await startOrderCreatedConsumer()
+}
+bootstrap()
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+    console.log(`Auth Service running on port ${PORT}`);
 });

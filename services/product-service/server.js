@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const authRoutes = require('./interfaces/rest/auth.route');
 const productRoutes = require("./interfaces/rest/product.route")
+const {startGrpcServer} = require("./interfaces/grpc/product.grpcServer")
 
 
 app.use((err, req, res, next) => {
@@ -14,13 +14,13 @@ app.use((req, res, next) => {
     next();
 });
 
-const router = express.Router()
+
 
 
 app.use(express.json());
 
 app.use('/product', productRoutes);
-
+startGrpcServer()
 
 const PORT = process.env.PORT || 3001;
 

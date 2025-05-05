@@ -8,7 +8,7 @@ const initializeUser = require("./user.model")
 const initializeModels = async () => {
     try {
         const database = await databasePromise()
-        const sequelize = database.getsSequelize()
+        const sequelize = database.getSequelize()
         const Address = await initializeAddress(sequelize)
         const Comments = await initializeComments(sequelize)
         const Follows = await initializeFollows(sequelize)

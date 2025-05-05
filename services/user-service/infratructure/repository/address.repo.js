@@ -1,36 +1,49 @@
+const Address = require('../../domain/address');
 
 class AddressRepository {
     constructor(models) {
-        this.Address = models.Address
+        this.AddressModel = models.Address; // Sequelize model
     }
-    async findAddressByUserId({UserId, address_type = 'main'}) {
-        return await this.Address.findOne({
+
+    async findAddressByUserId({ UserId, address_type = 'main' }) {
+        const addressData = await this.AddressModel.findOne({
             where: {
                 UserId: UserId,
                 address_type: address_type
             },
-            raw:true
-        })
+            raw: true
+        });
+        if (!addressData) return null;
+
+        return new Address(addressData);
     }
+
     async getListAddress(UserId) {
-        return await this.Address.findAll({
+        const addressList = await this.AddressModel.findAll({
             where: {
                 UserId: UserId,
-            }
-        })
+            },
+            raw: true
+        });
+
+        return addressList.map(data => new Address(data));
     }
+
     async createAddress({ UserId, address_type, pincode, address, city, country }) {
-        return await this.Address.create({
+        const newAddress = await this.AddressModel.create({
             UserId,
             address_type,
             pincode,
             address,
             city,
             country
-        })
+        });
+
+        return new Address(newAddress.get({ plain: true }));
     }
-    async updateUserAddress(UserId,{address_type = 'Main', pincode, address, city, country }) {
-        return await this.Address.update({
+
+    async updateUserAddress(UserId, { address_type = 'main', pincode, address, city, country }) {
+        await this.AddressModel.update({
             address_type,
             pincode,
             address,
@@ -40,8 +53,10 @@ class AddressRepository {
             where: {
                 UserId: UserId
             }
-        })
+        });
+
+        return this.findAddressByUserId({ UserId, address_type });
     }
 }
 
-module.exports = AddressRepository
+module.exports = AddressRepository;
