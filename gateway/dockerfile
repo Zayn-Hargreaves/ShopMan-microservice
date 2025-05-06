@@ -1,0 +1,23 @@
+# Sử dụng image NodeJS nhẹ
+FROM node:20-alpine
+
+# Tạo thư mục workdir
+WORKDIR /app
+
+# Copy package.json và package-lock.json để cache cài đặt dependencies
+COPY package*.json ./
+
+# Cài đặt dependencies (chỉ production)
+RUN npm install --production
+
+# Copy toàn bộ mã nguồn vào container
+COPY . .
+
+# Nếu sử dụng TypeScript, thêm:
+# RUN npm run build
+
+# Expose cổng API Gateway (ví dụ: 3000, sửa lại nếu cần)
+EXPOSE 3000
+
+# Lệnh chạy gateway (sửa lại nếu entrypoint khác)
+CMD ["npm", "start"]

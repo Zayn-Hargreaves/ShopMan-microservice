@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  title: Order Service API
+  version: 1.0.0
+  description: API xử lý đơn đặt hàng
+servers:
+  - url: http://localhost:3002
+paths:
+  /api/orders:
+    post:
+      summary: Tạo đơn hàng mới
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                products:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      productId:
+                        type: string
+                        example: 123abc
+                      quantity:
+                        type: integer
+                        example: 2
+                address:
+                  type: string
+                  example: "123 Nguyễn Trãi, Hà Nội"
+      responses:
+        "201":
+          description: Đơn hàng tạo thành công
+        "400":
+          description: Dữ liệu không hợp lệ
+        "409":
+          description: Không đủ hàng trong kho
+
+    get:
+      summary: Lấy danh sách đơn hàng của user hiện tại
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Trả về danh sách đơn hàng
+
+  /api/orders/{orderId}:
+    get:
+      summary: Lấy chi tiết 1 đơn hàng
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: orderId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Thông tin đơn hàng
+        "404":
+          description: Không tìm thấy đơn
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

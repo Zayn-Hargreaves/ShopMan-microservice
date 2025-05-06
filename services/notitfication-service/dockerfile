@@ -17,7 +17,7 @@ COPY . .
 # RUN npm run build
 
 # Expose port (chỉnh lại nếu service này dùng port khác)
-EXPOSE 3001
+EXPOSE 3004
 
 # Lệnh chạy service (chỉnh lại nếu entrypoint khác)
 CMD ["npm", "start"]

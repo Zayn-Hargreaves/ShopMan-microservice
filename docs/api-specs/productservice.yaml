@@ -1,0 +1,140 @@
+openapi: 3.0.0
+info:
+  title: Product Service API
+  version: 1.0.0
+  description: API quản lý sản phẩm và tồn kho
+servers:
+  - url: http://localhost:3005
+paths:
+  /api/products:
+    get:
+      summary: Lấy danh sách sản phẩm
+      responses:
+        "200":
+          description: Danh sách sản phẩm
+
+    post:
+      summary: Thêm sản phẩm mới (admin)
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: Áo thun nam
+                price:
+                  type: number
+                  example: 199000
+                description:
+                  type: string
+                  example: Áo thun cotton 100%
+                stock:
+                  type: integer
+                  example: 10
+                imageUrl:
+                  type: string
+                  example: https://shopman.com/image/1.jpg
+      responses:
+        "201":
+          description: Thêm sản phẩm thành công
+        "400":
+          description: Dữ liệu không hợp lệ
+        "401":
+          description: Không xác thực
+
+  /api/products/{productId}:
+    get:
+      summary: Lấy chi tiết sản phẩm
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Thông tin sản phẩm
+        "404":
+          description: Không tìm thấy sản phẩm
+
+    put:
+      summary: Cập nhật thông tin sản phẩm (admin)
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                price:
+                  type: number
+                description:
+                  type: string
+                stock:
+                  type: integer
+                imageUrl:
+                  type: string
+      responses:
+        "200":
+          description: Cập nhật thành công
+        "400":
+          description: Dữ liệu không hợp lệ
+        "401":
+          description: Không xác thực
+        "404":
+          description: Không tìm thấy sản phẩm
+
+    delete:
+      summary: Xóa sản phẩm (admin)
+      security:
+        - bearerAuth: []
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Xóa thành công
+        "401":
+          description: Không xác thực
+        "404":
+          description: Không tìm thấy sản phẩm
+
+  /api/products/{productId}/stock:
+    get:
+      summary: Kiểm tra số lượng tồn kho của sản phẩm
+      parameters:
+        - in: path
+          name: productId
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Trả về số lượng tồn kho
+        "404":
+          description: Không tìm thấy sản phẩm
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
