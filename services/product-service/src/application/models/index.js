@@ -29,5 +29,4 @@ const initializeModels = async()=>{
     }
 }
 
-await initializeModels()
-// module.exports = initializeModels;
+module.exports = initializeModels;

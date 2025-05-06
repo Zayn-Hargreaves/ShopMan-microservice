@@ -9,16 +9,72 @@ async function GetAllProducts(call, callback) {
   }
 }
 
+
 async function GetProductBySlug(call, callback) {
   try {
     const { slug } = call.request;
     const product = await ProductService.getProductDetail(slug);
-    callback(null, product);
+
+    const productDetail = {
+      id: product.id,
+      name: product.name,
+      desc: product.desc,
+      desc_plain: product.desc_plain,
+      price: parseFloat(product.price),
+      discount_percentage: product.discount_percentage,
+      thumb: product.thumb,
+      attrs: product.attrs || {}, // Truyền object JS gốc, protobufjs sẽ tự chuyển sang Struct
+      status: product.status,
+      slug: product.slug,
+      CategoryId: product.CategoryId,
+      CategoryPath: Array.isArray(product.CategoryPath) ? product.CategoryPath : [],
+      sort: product.sort,
+      ShopId: product.ShopId,
+      rating: parseFloat(product.rating),
+      sale_count: product.sale_count,
+      has_variations: !!product.has_variations,
+      createdAt: product.createdAt instanceof Date ? product.createdAt.toISOString() : `${product.createdAt}`,
+      updatedAt: product.updatedAt instanceof Date ? product.updatedAt.toISOString() : `${product.updatedAt}`,
+      skus: Array.isArray(product.skus) ? product.skus.map(sku => ({
+        id: sku.id,
+        ProductId: sku.ProductId,
+        sku_no: sku.sku_no,
+        sku_name: sku.sku_name,
+        sku_desc: sku.sku_desc,
+        sku_type: sku.sku_type,
+        status: sku.status,
+        sort: sku.sort,
+        sku_stock: sku.sku_stock,
+        sku_price: parseFloat(sku.sku_price),
+        skuAttr: Array.isArray(sku.skuAttr)
+          ? sku.skuAttr.map(attr => ({
+            id: attr.id,
+            sku_no: attr.sku_no,
+            sku_stock: attr.sku_stock,
+            sku_price: parseFloat(attr.sku_price),
+            sku_attrs: attr.sku_attrs || {}, // Truyền object gốc
+            createdAt: attr.createdAt instanceof Date ? attr.createdAt.toISOString() : `${attr.createdAt}`,
+            updatedAt: attr.updatedAt instanceof Date ? attr.updatedAt.toISOString() : `${attr.updatedAt}`,
+          }))
+          : [],
+        skuSpecs: Array.isArray(sku.skuSpecs)
+          ? sku.skuSpecs.map(spec => ({
+            id: spec.id,
+            SkuId: spec.SkuId,
+            sku_specs: spec.sku_specs || {}, // Truyền object gốc
+            createdAt: spec.createdAt instanceof Date ? spec.createdAt.toISOString() : `${spec.createdAt}`,
+            updatedAt: spec.updatedAt instanceof Date ? spec.updatedAt.toISOString() : `${spec.updatedAt}`,
+          }))
+          : [],
+      })) : [],
+    };
+
+    callback(null, productDetail);
   } catch (e) {
+    console.error('GetProductBySlug error:', e);
     callback(e, null);
   }
 }
-
 async function GetProductsBySkuList(call, callback) {
   try {
     const { items } = call.request;

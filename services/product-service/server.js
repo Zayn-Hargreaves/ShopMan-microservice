@@ -2,7 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const productRoutes = require("./src/interfaces/rest/product.route")
-const {startOrderCreatedConsumer} = require("./src/interfaces/rabbit mq/orderCreated.consumer")
+const {startOrderCreatedConsumer} = require("./src/interfaces/rabbit mq/orderCreated.consumer");
+const initializeModels = require('./src/application/models');
 require("./src/interfaces/grpc/product.grpcServer")
 
 app.use((err, req, res, next) => {
@@ -14,7 +15,10 @@ app.use((req, res, next) => {
     next();
 });
 
-
+async function init() {
+    await initializeModels()
+}
+init()
 async function bootstrap() {
     await startOrderCreatedConsumer()
 }

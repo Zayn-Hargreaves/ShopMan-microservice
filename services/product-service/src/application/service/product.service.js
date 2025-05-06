@@ -11,11 +11,9 @@ class ProductService {
         const spuToSkus = await ProductRepository.findAllSpuToSku(product.id);
         const skuNos = spuToSkus.map(s => s.sku_no);
 
-        const [skus, skuAttrs, skuSpecs] = await Promise.all([
-            ProductRepository.findAllSku(skuNos),
-            ProductRepository.findAllSkuAttr(skuNos),
-            ProductRepository.findAllSkuSpecs(skus.map(s => s.id))
-        ]);
+        const skus = await ProductRepository.findAllSku(skuNos);
+        const skuAttrs = await ProductRepository.findAllSkuAttr(skuNos);
+        const skuSpecs = await ProductRepository.findAllSkuSpecs(skus.map(s => s.id));
 
         const skuAttrMap = Object.fromEntries(skuAttrs.map(a => [a.sku_no, a]));
         const skuSpecMap = skus.reduce((acc, sku) => {
