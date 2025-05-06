@@ -75,10 +75,27 @@ async function GetProductBySlug(call, callback) {
     callback(e, null);
   }
 }
+// {
+//   productId: 0,
+//   skuNo: '',
+//   productName: '',
+//   sku_price: 0,
+//   sku_stock: 0,
+//   thumb: ''
+// },
 async function GetProductsBySkuList(call, callback) {
   try {
     const { items } = call.request;
-    const products = await ProductService.getProductsBySkuList(items);
+    let products = await ProductService.getProductsBySkuList(items);
+    products = products.map(p => ({
+      productId: Number(p.productId), // đảm bảo int32
+      skuNo: String(p.skuNo),
+      productName: String(p.productName || ""),
+      sku_price: p.sku_price !== undefined ? parseFloat(p.sku_price) : 0, // float
+      sku_stock: p.sku_stock !== undefined ? Number(p.sku_stock) : 0,     // int32
+      thumb: p.thumb ? String(p.thumb) : ""
+    }));
+    console.log(products)
     callback(null, { products });
   } catch (e) {
     callback(e, null);

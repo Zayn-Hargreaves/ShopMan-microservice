@@ -7,7 +7,7 @@ import "google/protobuf/struct.proto";
 service ProductService {
   rpc GetAllProducts (Empty) returns (GetAllProductsResponse);
   rpc GetProductBySlug (GetProductBySlugRequest) returns (ProductDetail);
-  rpc GetProductsBySkuList (GetProductsRequest) returns (GetProductsResponse);
+  rpc GetProductsBySkuList (GetProductsRequest) returns (GetProductsSkuResponse);
   rpc GetPaginatedProducts (GetPaginatedProductsRequest) returns (GetPaginatedProductsResponse);
 }
 
@@ -98,6 +98,16 @@ message SkuSpec {
   string updatedAt = 5;
 }
 
-message GetProductsResponse {
-  repeated ProductDetail products = 1;
+
+message ProductSkuDetail {
+  int32 productId = 1;
+  string skuNo = 2;
+  string productName = 3;
+  float sku_price = 4;
+  int32 sku_stock = 5;
+  string thumb = 6;
+}
+
+message GetProductsSkuResponse {
+  repeated ProductSkuDetail products = 1;
 }

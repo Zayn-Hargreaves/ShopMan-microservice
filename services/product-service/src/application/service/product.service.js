@@ -50,21 +50,22 @@ class ProductService {
             ProductRepository.findAllSkuAttr(skuNos),
             ProductRepository.getProductsByIds(items.map(i => i.productId))
         ]);
-
+        // Chuyển từ Sequelize instance về plain object
+        const plainProducts = productsById.map(p => p.dataValues ? p.dataValues : p);
         const skuMap = Object.fromEntries(skuAttrs.map(s => [s.sku_no, s]));
-        const productMap = Object.fromEntries(productsById.map(p => [p.id, p]));
+        const productMap = Object.fromEntries(plainProducts.map(p => [p.id, p]));
 
         const result = items.map(({ productId, skuNo }) => {
             const skuAttr = skuMap[skuNo];
             const product = productMap[productId];
             if (!skuAttr || !product) return null;
-
+            console.log()
             return {
                 productId,
                 skuNo,
                 sku_price: skuAttr.sku_price,
                 sku_stock: skuAttr.sku_stock,
-                productName: product.name,
+                productName: product.name, // lúc này chắc chắn là lấy được name
             };
         }).filter(Boolean);
 

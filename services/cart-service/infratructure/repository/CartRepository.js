@@ -1,7 +1,7 @@
 class CartRepository {
     constructor(models) {
         this.Cart = models.Cart;
-        this.CartsDetails = models.CartsDetails;
+        this.CartsDetails = models.CartDetails;
     }
     async getOrCreateCart(UserId) {
         let cart = await this.Cart.findOne({ where: { UserId, cart_status: "active" } });
@@ -57,14 +57,17 @@ class CartRepository {
     async addProductToCart({ UserId, ProductId, sku_no, quantity }) {
         const cart = await this.getOrCreateCart(UserId);
         let item = await this.CartsDetails.findOne({ where: { CartId: cart.id, ProductId, sku_no } });
-
+        console.log(item)
         if (item) {
             item.quantity += quantity;
             await item.save();
         } else {
-            item = await this.CartsDetails.create({ CartId: cart.id, ProductId, sku_no, quantity });
+            try {
+                item = await this.CartsDetails.create({ CartId: cart.id, ProductId, sku_no, quantity });
+            } catch (error) {
+                console.log("cartRepository:::69", error)
+            }
         }
-
         return item; 
     }
 

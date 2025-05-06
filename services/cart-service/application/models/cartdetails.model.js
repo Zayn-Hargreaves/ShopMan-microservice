@@ -4,9 +4,14 @@ const { DataTypes, Model } = require('sequelize');
 class CartDetails extends Model { }
 const initializeCartDetails = async (sequelize) => {
     CartDetails.init({
-        CartId: {
+        id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
+            autoIncrement:true,
+            allowNull: false
+        },
+        CartId: {
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         ProductId: {

@@ -299,3 +299,189 @@
 [2025-05-06 12:56:30] INFO: [d438f275-bd64-4503-b30e-ab52c2233005] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
 [2025-05-06 13:00:56] INFO: [c1912151-c060-479b-af44-61206149c199] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
 [2025-05-06 13:03:26] INFO: [7310c8bc-406b-4d50-a472-72c1b5edca88] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 13:05:46] INFO: [758c5a44-a2e7-4bd6-b4a1-33d753005aae] POST /user/login
+[2025-05-06 13:05:58] INFO: [c5b101af-f102-456f-9b5b-492b1646dd59] POST /user/login
+[2025-05-06 13:06:16] INFO: [03e40f60-a124-43fa-b229-9d27daf43911] POST /user/login
+[2025-05-06 13:06:23] INFO: [81018973-a514-44b7-942e-ab7bdc626ee1] POST /user/login
+[2025-05-06 13:06:25] INFO: [56fc34b3-d74a-4fe9-9548-3b74a644084d] POST /user/login
+[2025-05-06 13:06:57] INFO: [13711803-81a3-4718-8544-ec5bdb1c899d] POST /user/signup
+[2025-05-06 13:07:51] INFO: [ce663245-0135-4c91-809a-30de104ebee7] POST /user/signup
+[2025-05-06 13:08:21] INFO: [04d2904f-d533-4a38-b6e8-67b9fb69a095] POST /user/login
+[2025-05-06 13:09:37] INFO: [f15ba6b3-9915-498e-afbb-c35db6618193] GET /cart
+[2025-05-06 13:13:08] INFO: [83b23625-20b0-4dd0-8940-5f88a2e66287] GET /cart
+[2025-05-06 13:20:57] INFO: [316bf88c-44b9-4c9f-b5ba-57734c2a48be] GET /cart
+[2025-05-06 13:21:03] INFO: [9e176b11-2a98-4845-bcb1-6e67f1715642] GET /cart
+[2025-05-06 13:21:04] INFO: [e00158b2-8227-4e66-ab18-1be91dc448d3] GET /cart
+[2025-05-06 13:21:05] INFO: [2ca78577-1f4c-4d8b-ab7b-145a9f1934a2] GET /cart
+[2025-05-06 13:21:42] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 13:21:47] INFO: [cb02e619-0cb0-4f1b-834a-dde459757e99] GET /cart
+[2025-05-06 13:23:46] INFO: [00ffd870-52fc-4326-baba-bf1154950afa] GET /cart
+[2025-05-06 13:24:20] INFO: [d1ce138b-52c7-4819-bde1-5707f92ca1c3] GET /product/detail/womens-brown-cotton-letter-print-t-shir
+[2025-05-06 13:24:45] INFO: [04e68e93-26fd-4b41-8e58-0485f46b89ae] GET /product/detail/womens-brown-cotton-letter-print-t-shir
+[2025-05-06 13:25:19] INFO: [70a2d5e4-4a9c-4033-978e-9dfa6e3d2fa2] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 13:27:24] INFO: [fd8cb74b-e668-427c-b7ed-aa033ff1ea48] GET /product
+[2025-05-06 13:27:55] INFO: [9e94f9e3-f2ab-4598-b197-10eaf86e4bc9] GET /product/detail/plaid-korean-sunscreen-shirt
+[2025-05-06 13:32:26] INFO: [4f4bb792-b991-4812-93b4-c61f6737c70b] GET /cart/add
+[2025-05-06 13:32:32] INFO: [0ca16317-90dd-46c1-ac61-3728be9dac4e] POST /cart/add
+[2025-05-06 13:33:52] INFO: [57e69806-ba31-466c-b3dc-f8e6650e5ec1] POST /cart/add
+[2025-05-06 13:34:12] INFO: [76bedc07-1775-456d-9b04-aa6c2bcc26e6] POST /cart/add
+[2025-05-06 13:35:14] INFO: [d8483d35-311c-4d24-b672-819d9bdbe1cc] POST /cart/add
+[2025-05-06 13:37:37] INFO: [36839ec4-61c5-4e98-a396-46bf054bcf91] POST /cart/add
+[2025-05-06 13:37:39] INFO: [c9cdae93-390f-419d-8e2a-d8ece1ade311] POST /cart/add
+[2025-05-06 13:38:15] INFO: [26d47360-0fb1-416a-8344-5cb4212d4fe0] POST /cart/add
+[2025-05-06 13:39:35] INFO: [7d7003a4-30ef-40c8-a3ee-a52b3eb8e68c] POST /cart/add
+[2025-05-06 13:40:37] INFO: [a0965add-fc3f-4c5a-b1c7-d96f9d150391] POST /cart/add
+[2025-05-06 13:43:08] INFO: [24f2f4e1-0a20-412e-9ec1-8c74c30856b5] POST /cart/add
+[2025-05-06 13:43:09] INFO: [4b9ac2f5-402c-4eb6-aebe-4b3b1c322a4c] POST /cart/add
+[2025-05-06 13:44:14] INFO: [34a57895-c849-463d-8edf-d1c6119cbdd6] POST /cart/add
+[2025-05-06 13:44:57] INFO: [a65752c3-3675-4b7e-aba0-aeeed0e3955a] POST /cart/add
+[2025-05-06 13:46:26] INFO: [5d47af6a-84e7-4269-9486-9df835351d19] POST /cart/add
+[2025-05-06 13:47:05] INFO: [37609536-bfbc-4e03-9f4f-967c6a6a7b97] POST /cart/add
+[2025-05-06 13:49:12] INFO: [da7b4167-95be-4645-9208-3c098c4d602c] POST /cart/add
+[2025-05-06 13:50:24] INFO: [2c531356-a174-4a8b-9890-5d3c44939cf6] POST /cart/add
+[2025-05-06 13:52:59] INFO: [e155ed94-b5e8-403f-ab66-b0ad1a8cf5ea] POST /cart/add
+[2025-05-06 13:53:42] INFO: [8e60a35f-6638-4d9c-a67b-7fc13796fa51] POST /cart/add
+[2025-05-06 13:54:53] INFO: [d4863a17-8a50-429e-97ba-ae6536b33309] POST /cart/add
+[2025-05-06 13:56:17] INFO: [d1b06fe1-5d1b-481c-9ddd-5442a8c6098b] POST /cart/add
+[2025-05-06 13:56:34] INFO: [773a2f5d-ff0d-40ac-8b5f-4fb0d8fd4282] POST /cart/add
+[2025-05-06 13:58:21] INFO: [e7f80129-8d2c-4d2d-ab9f-ce2d633f9559] POST /cart/add
+[2025-05-06 13:59:53] INFO: [350c946a-0382-47ab-813c-33bcaf1d8e4e] POST /cart/add
+[2025-05-06 14:00:14] INFO: [14925af7-ed5b-44b6-a5b9-f410e40d7d3b] POST /cart/add
+[2025-05-06 14:01:24] INFO: [6f329812-d439-49e0-b555-81f8b8894087] POST /cart/add
+[2025-05-06 14:02:12] INFO: [cf4a2c4f-1a0f-4787-88d3-d16e33fafe56] POST /cart/add
+[2025-05-06 14:06:17] INFO: [adaab909-a99c-41fe-ae9a-a87a4c1413b0] POST /cart/add
+[2025-05-06 14:06:35] INFO: [76470828-338f-4ca3-95fe-dfd9322978c3] POST /cart/add
+[2025-05-06 14:08:25] INFO: [2aa2b23d-a7d5-49d9-be96-66eff04f51f2] POST /cart/add
+[2025-05-06 14:09:29] INFO: [3752e5c4-e9e2-44bd-9dc2-e9ea149c2c17] GET /cart
+[2025-05-06 14:10:15] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 14:10:17] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 14:10:24] INFO: [e22d7947-f3fc-4045-8d19-6e2bed2c4559] GET /cart
+[2025-05-06 14:10:42] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 14:10:50] INFO: [a721c8ea-90cf-4292-899c-c25f6e5e3f75] GET /cart
+[2025-05-06 14:12:05] INFO: [b1559ff6-9554-4227-a8f3-862f8bdf6ccc] POST /cart/add
+[2025-05-06 14:13:07] INFO: [3895f0e1-5601-4861-948c-2f0c0eae85ba] POST /cart/add
+[2025-05-06 14:15:13] INFO: [b7fe5323-b627-4a1c-8f68-e7949227d148] POST /cart/add
+[2025-05-06 14:15:49] INFO: [cb64a008-30b2-4e00-a3fe-4eb7ec1f4a02] POST /cart/add
+[2025-05-06 14:16:40] INFO: [70a26a64-5627-41fe-a695-909d5a1a8984] POST /cart/add
+[2025-05-06 14:17:17] INFO: [7193cd40-1a2b-40b5-8741-17619f1101c7] POST /cart/add
+[2025-05-06 14:18:28] INFO: [a5793d9a-1ba5-414d-886e-2ef90feb5f2a] POST /cart/add
+[2025-05-06 14:19:20] INFO: [20eb7a6b-09f9-4382-87d8-6b576e8f782a] POST /cart/add
+[2025-05-06 14:19:49] INFO: [a0395702-df4d-475d-83c5-dea3ef58b64e] POST /cart/add
+[2025-05-06 14:21:03] INFO: [f7c18238-a4e0-4e7c-8842-c6daf8e94013] POST /cart/add
+[2025-05-06 14:22:06] INFO: [f7e62d88-6799-4f80-8f08-736e44b3babb] POST /cart/add
+[2025-05-06 14:30:20] INFO: [34503b6f-b372-4616-908a-b53eb3ff21ce] POST /cart/add
+[2025-05-06 14:31:15] INFO: [f8ee9694-422a-471d-aa40-f25bcf2ca0f1] POST /cart/add
+[2025-05-06 14:34:15] INFO: [4c63de8f-e0cf-4a69-b49f-d60fa68cd254] POST /cart/add
+[2025-05-06 14:36:27] INFO: [3cae9fb9-1552-4a8f-8da8-d0bd601f3ec3] POST /cart/add
+[2025-05-06 14:38:56] INFO: [74a94af8-e4ba-40d7-a6a2-4e861c52e190] POST /cart/add
+[2025-05-06 14:39:04] INFO: [43950cfd-b9c5-4132-9d2b-2e96e75daf22] POST /cart/add
+[2025-05-06 14:41:26] INFO: [c4789881-c4b1-416b-a198-5c1865c8f43e] POST /cart/add
+[2025-05-06 14:41:42] INFO: [bf2016cc-1b52-4e89-b965-abb2aee1ff70] POST /cart/add
+[2025-05-06 14:42:33] INFO: [c1d9322b-ba84-4229-99a5-f02b8c465c82] GET /cart
+[2025-05-06 14:43:47] INFO: [4792a5a4-54a1-44bb-8b76-c474da306d78] GET /cart
+[2025-05-06 14:44:14] INFO: [9a23a9f8-618d-410e-bf3e-e64003ac013f] GET /cart
+[2025-05-06 14:49:57] INFO: [8d774863-158a-4e19-926f-fe0cff437717] GET /cart
+[2025-05-06 14:50:21] INFO: [7c00ad47-2014-4eb0-852b-7ff58680301b] GET /cart
+[2025-05-06 14:51:49] INFO: [65b2c85a-2515-4e38-9b9b-c8fb4119c920] GET /cart
+[2025-05-06 14:54:40] INFO: [5a9c4a01-9228-4145-9b0c-33ae8b10d1c7] GET /cart
+[2025-05-06 14:55:52] INFO: [d796bff9-c43b-4efa-b470-359cabc75122] GET /cart
+[2025-05-06 14:57:40] INFO: [391f3a5a-5853-46a1-a383-37f79ad6587e] GET /cart
+[2025-05-06 15:06:18] INFO: [5a892b3f-b6f5-47c1-9126-89a728c11bd0] GET /order/from-cart
+[2025-05-06 15:06:25] INFO: [26ad1059-30ac-42bc-8330-2792607cdca3] POST /order/from-cart
+[2025-05-06 15:08:21] INFO: [602819ee-b54d-46e7-936e-a4bd008dcd04] POST /order/from-cart
+[2025-05-06 15:08:22] INFO: [91fe19c0-06dd-4c8d-9fc1-7aee69845b1f] POST /order/from-cart
+[2025-05-06 15:08:23] INFO: [38d0b4fa-2e8e-4731-9aa2-4321cf883cac] POST /order/from-cart
+[2025-05-06 15:08:24] INFO: [368e34a4-d859-4795-8d3d-524edd8a1546] POST /order/from-cart
+[2025-05-06 15:08:55] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:09:17] INFO: [4ddf06e0-550c-4513-8f12-9067bc754f37] POST /order/from-cart
+[2025-05-06 15:09:39] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:09:49] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:09:55] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:10:00] INFO: [62a28b94-cd64-4b2a-8296-14b66e375da9] POST /order/from-cart
+[2025-05-06 15:10:44] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:10:45] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:10:48] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:10:50] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:10:56] INFO: [69e660b2-a08e-43cf-9184-57162f000977] POST /order/from-cart
+[2025-05-06 15:11:01] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:11:03] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:11:38] INFO: [358b3086-2658-4fa7-96d0-4f4cbbd67a16] POST /order/from-cart
+[2025-05-06 15:11:53] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:12:08] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:12:11] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:12:14] INFO: [9c381d16-1312-4f05-a523-8f03c4dc338a] POST /order/from-cart
+[2025-05-06 15:12:34] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:12:39] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:13:25] INFO: [d96311e3-a97c-4631-b0ff-f5b21efa67db] POST /order/from-cart
+[2025-05-06 15:14:19] INFO: [59821da9-ae15-45ce-9ca0-04f8d83f954c] POST /order/from-cart
+[2025-05-06 15:14:31] INFO: [58ef51cb-e517-4926-b3a0-0d9d46e1715a] POST /order/from-cart
+[2025-05-06 15:16:00] INFO: [c2e09b66-827d-4560-94ea-4b3af3217ab9] POST /order/from-cart
+[2025-05-06 15:17:33] INFO: [2fc39a57-90ea-4d96-8fa6-c383ba97baf7] POST /order/from-cart
+[2025-05-06 15:17:59] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:18:14] INFO: [ae29b5ed-225c-48a1-aa8e-0cf79e95cd41] POST /order/from-cart
+[2025-05-06 15:19:45] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:19:52] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 15:19:58] INFO: [579b02db-6806-4ff0-99a0-d2f05334b680] POST /order/from-cart
+[2025-05-06 15:21:52] INFO: [b9be03b7-1e5c-4418-b3bf-4276c64e775a] POST /order/from-cart
+[2025-05-06 15:22:22] INFO: [60e19494-b9d4-4747-8d1a-3a00b747744d] POST /order/from-cart
+[2025-05-06 15:22:50] INFO: [565ce687-f6cb-49c9-b1e0-5e3610d985ab] POST /order/from-cart
+[2025-05-06 15:23:55] INFO: [ab3286a5-8041-4c98-9a94-db9b9e45ae6e] POST /order/from-cart
+[2025-05-06 15:24:25] INFO: [8bb20be3-0d9d-46dc-a43b-185d7b6bb0f0] POST /order/from-cart
+[2025-05-06 15:28:48] INFO: [8cbf1135-3ec0-4dd2-bd0b-282a73353ccf] POST /order/from-cart
+[2025-05-06 15:30:10] INFO: [98cd6503-6974-46a4-af8f-1dcbde995290] POST /order/from-cart
+[2025-05-06 15:30:50] INFO: [febdd997-c63e-4323-ae31-c68bb1bc025d] GET /cart
+[2025-05-06 15:33:44] INFO: [26b4aecd-8081-42be-b179-0b1c20c7bc12] GET /cart
+[2025-05-06 15:37:35] INFO: [0712b4e6-f6c7-45dc-9167-fec5ca5cd495] GET /cart
+[2025-05-06 15:37:40] INFO: [bb274e62-99c8-44f4-bb0b-1be7b74f6031] POST /order/from-cart
+[2025-05-06 15:48:54] INFO: [cda1e9ac-9ec0-4a2f-9ec7-afc6f6f502bc] POST /order/from-cart
+[2025-05-06 15:54:08] INFO: [2612e67a-797c-4b07-bf1d-ac964928a669] POST /order/from-cart
+[2025-05-06 15:56:47] INFO: [2268a30d-9a86-408c-94e3-57da073ef859] POST /order/from-cart
+[2025-05-06 15:57:00] INFO: [75c63178-38e8-4a51-b586-d683045441ab] POST /order/from-cart
+[2025-05-06 15:57:22] INFO: [43dc9f44-6980-405a-a549-0433b38db429] GET /cart
+[2025-05-06 16:09:19] INFO: [0eb2942b-bd5e-4aa5-a6a9-f08d225746bc] GET /cart
+[2025-05-06 16:11:56] INFO: [96d20a92-0ee8-4ecd-a798-5487d1013dc3] GET /cart
+[2025-05-06 16:14:34] INFO: [406d4058-2179-46e0-85c0-d6c55552584a] GET /cart
+[2025-05-06 16:16:38] INFO: [48f2e597-7417-4b1f-8fe7-7e588667626d] GET /cart
+[2025-05-06 16:17:07] INFO: [9dd5ec6b-b4f7-4e10-83f2-f9fe65d2267f] GET /cart
+[2025-05-06 16:18:06] INFO: [8d080dcb-013b-490e-a85a-99ce8cd27d68] GET /cart
+[2025-05-06 16:18:29] INFO: [630000d4-54bd-4da8-9dab-dff26f3686a1] GET /cart
+[2025-05-06 16:19:01] INFO: [0a0e75bc-487d-419d-b4f3-40da7365f162] GET /cart
+[2025-05-06 16:19:28] INFO: [c7e5d8f6-1986-44b7-b037-8c41e6c26c62] GET /cart
+[2025-05-06 16:20:17] INFO: [801e9101-46db-4aea-9429-bf0f8b66e9b1] GET /cart
+[2025-05-06 16:20:33] INFO: [0915f0d7-a75a-47cf-9715-fc58d75b5762] GET /cart
+[2025-05-06 16:21:06] INFO: [712d40eb-686a-445b-a43e-e17c2645b7c1] GET /cart
+[2025-05-06 16:21:31] INFO: [f85e40b6-0d2c-44e4-ad8f-241795f11428] GET /cart
+[2025-05-06 16:22:21] INFO: [11432901-0148-4cf6-8845-f83fc8cd3480] GET /cart
+[2025-05-06 16:23:38] INFO: [4a0e9f9c-1c0b-46db-9a03-4da59cbff097] GET /cart
+[2025-05-06 16:24:00] INFO: [231f0424-2ebf-4244-9c20-397d712db36e] GET /cart
+[2025-05-06 16:24:50] INFO: [18959806-c7ca-4d5e-a200-390a0b4e16fd] GET /cart
+[2025-05-06 16:25:21] INFO: [13c30c92-96ea-4141-bf45-6fb4783ddc9b] POST /order/from-cart
+[2025-05-06 16:30:25] INFO: [af74f2b7-78d1-4003-9829-818eb6325ab1] POST /order/from-cart
+[2025-05-06 16:32:00] INFO: [be1d8399-e5dc-481d-a155-04e3bcbfef7a] POST /order/from-cart
+[2025-05-06 16:33:29] INFO: [09708ce0-4046-46d5-845d-8117e279d67b] POST /order/from-cart
+[2025-05-06 16:34:14] INFO: [640dc37c-c996-4f2d-9555-fbfa6ff4b703] POST /order/from-cart
+[2025-05-06 16:34:47] INFO: [5ac23300-9257-4668-af41-f07935137888] POST /order/from-cart
+[2025-05-06 16:34:59] INFO: [be7a538c-bb1e-40c9-8667-23f4493e3ecb] POST /order/from-cart
+[2025-05-06 16:35:41] INFO: [362cafdd-ccc0-4648-a88e-9cd793a77804] POST /order/from-cart
+[2025-05-06 16:37:49] INFO: [24e96fc5-6ce0-4acf-a730-facae8b6cf47] POST /order/from-cart
+[2025-05-06 16:38:30] INFO: [c4952b99-f12a-4610-a827-69994acaf32c] POST /order/from-cart
+[2025-05-06 16:40:28] INFO: [781cf19a-8257-4544-807e-8816665050e0] POST /order/from-cart
+[2025-05-06 16:41:53] INFO: [36ec172e-66cb-4636-9db8-3bdcfe3d0774] POST /order/from-cart
+[2025-05-06 16:42:34] INFO: [4fd95f0b-4d36-4cfe-95ff-e8f4f7ac9575] POST /order/from-cart
+[2025-05-06 16:43:53] INFO: [dc022a00-9923-4363-991f-de1acd7f8ef4] POST /order/from-cart
+[2025-05-06 16:44:39] INFO: [4f439e93-c4e8-4572-a6c5-4edd80df12a9] POST /order/from-cart
+[2025-05-06 16:45:16] INFO: [90e87703-55fa-4d56-ab55-2bb8b25a2b40] POST /order/from-cart
+[2025-05-06 16:45:49] INFO: [575bd7ee-c658-4cda-8d0d-ab336d6cbacd] POST /order/from-cart
+[2025-05-06 16:46:09] INFO: [fda90f87-348d-4a41-9ba5-1c6a6a8eb856] POST /order/from-cart
+[2025-05-06 16:47:26] INFO: [e69d0023-08c2-453b-9065-241af6a20792] POST /order/from-cart
+[2025-05-06 16:48:03] INFO: [a9c54601-3d0a-453e-9890-4c434b18ad76] POST /order/from-cart
+[2025-05-06 16:48:17] INFO: [bee97bd1-c52e-4a1e-a880-db72bc17866e] POST /order/from-cart
+[2025-05-06 16:51:53] INFO: [6cc6ae1f-0520-48c6-bd84-35a467523898] POST /order/from-cart
+[2025-05-06 16:52:11] INFO: [9be9ef0a-3385-49b8-bc20-9d251ce14bf7] POST /order/from-cart
+[2025-05-06 16:52:31] INFO: [8897b42d-67bb-42a2-9b43-2590ddc381f1] POST /order/from-cart
+[2025-05-06 16:52:36] INFO: [25d2ab28-7ea6-4e19-9f2f-250c1904f3f0] POST /order/from-cart
+[2025-05-06 16:53:26] INFO: [8d7dfe4c-46ff-48fc-b6fd-009ca70fbdd0] POST /order/from-cart
+[2025-05-06 16:53:37] INFO: [c5ef3f52-a3db-4bcc-be83-0ef776f7c082] POST /order/from-cart
+[2025-05-06 16:54:24] INFO: [a60181c8-1204-4be0-a1b5-8e5ba6868aea] POST /order/from-cart
+[2025-05-06 16:55:46] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 16:57:38] INFO: [3599d1fa-92dc-4e02-83ef-9276d86cf5ef] POST /order/from-cart

@@ -1,7 +1,7 @@
 const grpc = require('@grpc/grpc-js');
 const protoLoader = require('@grpc/proto-loader');
 const path = require('path');
-const { getCartHandler, addToCartHandler, updateCartItemHandler } = require('./cart.GrpcHandler');
+const { getCart, addToCart, updateCartItem } = require('./cart.GrpcHandler');
 
 const PROTO_PATH = path.join(__dirname, './cart.proto');
 
@@ -14,19 +14,34 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 });
 const cartProto = grpc.loadPackageDefinition(packageDefinition).cart;
 
-function startGrpcServer() {
-    const server = new grpc.Server();
+const server = new grpc.Server()
+server.addService(cartProto.CartService.service,{
+    getCart,
+    addToCart,
+    updateCartItem
+})
 
-    server.addService(cartProto.CartService.service, {
-        GetCart: getCartHandler,
-        AddToCart: addToCartHandler,
-        UpdateCartItem: updateCartItemHandler
-    });
+server.bindAsync('0.0.0.0:50054', grpc.ServerCredentials.createInsecure(), (err, port) => {
+    if (err) {
+        console.error('Failed to bind server:', err.message);
+        return;
+    }
+    console.log(`🚀 gRPC ProductService running on port ${port}`);
+    server.start(); // Start the server only after successful binding
+});
+// function startGrpcServer() {
+//     console.log("server")
+//     const server = new grpc.Server();
 
-    server.bindAsync('0.0.0.0:50054', grpc.ServerCredentials.createInsecure(), () => {
-        console.log('🚀 gRPC CartService running at 50054');
-        server.start();
-    });
-}
+//     server.addService(cartProto.CartService.service, {
+//         GetCart: getCartHandler,
+//         AddToCart: addToCartHandler,
+//         UpdateCartItem: updateCartItemHandler
+//     });
 
-module.exports = { startGrpcServer };
+//     server.bindAsync('0.0.0.0:50054', grpc.ServerCredentials.createInsecure(), () => {
+//         console.log('🚀 gRPC CartService running at 50054');
+//         server.start();
+//     });
+// }
+

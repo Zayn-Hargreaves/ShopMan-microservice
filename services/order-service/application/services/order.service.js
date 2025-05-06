@@ -4,6 +4,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const { getProductListFromProductService } = require("../../interfaces/grpc/product/productClient")
 const { runProducer } = require("../../infratructure/rabbit mq/rabbitmq")
 const Joi = require("joi");
+const RedisService = require("./redis.service")
 const { NotFoundError, BadRequestError, ConflictError } = require("../../shared/cores/error.response");
 class OrderService {
     static validateFromCartInput(data) {
@@ -31,30 +32,32 @@ class OrderService {
         const lockList = [];
         let totalAmount = 0;
         const finalItems = [];
-
         // Gọi gRPC ProductService để lấy thông tin sản phẩm
         const productInfoList = await getProductListFromProductService(
-            selectedItems.map(({ productId, skuNo }) => ({ productId, skuNo }))
+            selectedItems.map(({ productId, skuNo }) => ({
+                productId: String(productId),
+                skuNo: String(skuNo),
+            }))
         );
 
+        // Đảm bảo key là string
         const productMap = Object.fromEntries(
-            productInfoList.map(p => [`${p.productId}_${p.skuNo}`, p])
+            productInfoList.map(p => [`${String(p.productId)}_${String(p.skuNo)}`, p])
         );
 
         try {
             const productProcessing = selectedItems.map(async (item) => {
                 const { productId, skuNo, quantity } = item;
-                const key = `${productId}_${skuNo}`;
+                const key = `${String(productId)}_${String(skuNo)}`;
                 const productDetail = productMap[key];
-
                 if (!productDetail || productDetail.sku_stock < quantity) {
                     throw new NotFoundError(`Product ${productId} - ${skuNo} is out of stock or unavailable`);
                 }
 
                 const lock = await RedisService.acquireLock({
-                    productID: productId,
-                    skuNo,
-                    cartID: userId,
+                    productID: String(productId),
+                    skuNo: String(skuNo),
+                    cartID: String(userId),
                     quantity,
                     timeout: 900,
                 });
@@ -74,9 +77,8 @@ class OrderService {
             });
 
             await Promise.all(productProcessing);
-
             const paymentIntent = await stripe.paymentIntents.create({
-                amount: Math.round(totalAmount * 100),
+                amount: Math.round(totalAmount ),
                 currency: "sgd",
                 metadata: {
                     userId: String(userId),
@@ -128,9 +130,9 @@ class OrderService {
 
             const unitPrice = parseFloat(productDetail.sku_price || 0);
             const itemTotal = quantity * unitPrice;
-
+            console.log(itemTotal)
             const paymentIntent = await stripe.paymentIntents.create({
-                amount: Math.round(itemTotal * 100),
+                amount: Math.round(itemTotal),
                 currency: "sgd",
                 metadata: {
                     userId: String(userId),

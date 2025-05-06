@@ -2,8 +2,23 @@ syntax = "proto3";
 
 package product;
 
+import "google/protobuf/struct.proto";
+
 service ProductService {
-  rpc GetProductsBySkuList (GetProductsRequest) returns (GetProductsResponse);
+  rpc GetAllProducts (Empty) returns (GetAllProductsResponse);
+  rpc GetProductBySlug (GetProductBySlugRequest) returns (ProductDetail);
+  rpc GetProductsBySkuList (GetProductsRequest) returns (GetProductsSkuResponse);
+  rpc GetPaginatedProducts (GetPaginatedProductsRequest) returns (GetPaginatedProductsResponse);
+}
+
+message Empty {}
+
+message GetAllProductsResponse {
+  repeated ProductDetail products = 1;
+}
+
+message GetProductBySlugRequest {
+  string slug = 1;
 }
 
 message GetProductsRequest {
@@ -15,15 +30,84 @@ message ProductSkuInput {
   string skuNo = 2;
 }
 
+message GetPaginatedProductsRequest {
+  int32 page = 1;
+  int32 limit = 2;
+}
+
+message GetPaginatedProductsResponse {
+  repeated ProductDetail products = 1;
+  int32 limit = 2;
+  int32 total = 3;
+  int32 totalPages = 4;
+}
+
 message ProductDetail {
+  int32 id = 1;
+  string name = 2;
+  string desc = 3;
+  string desc_plain = 4;
+  float price = 5;
+  int32 discount_percentage = 6;
+  string thumb = 7;
+  google.protobuf.Struct attrs = 8; // attrs is now fully dynamic (jsonb)
+  string status = 9;
+  string slug = 10;
+  int32 CategoryId = 11;
+  repeated int32 CategoryPath = 12;
+  int32 sort = 13;
+  int32 ShopId = 14;
+  float rating = 15;
+  int32 sale_count = 16;
+  bool has_variations = 17;
+  string createdAt = 18;
+  string updatedAt = 19;
+  repeated ProductSku skus = 20;
+}
+
+message ProductSku {
+  int32 id = 1;
+  int32 ProductId = 2;
+  string sku_no = 3;
+  string sku_name = 4;
+  string sku_desc = 5;
+  int32 sku_type = 6;
+  string status = 7;
+  int32 sort = 8;
+  int32 sku_stock = 9;
+  float sku_price = 10;
+  repeated SkuAttr skuAttr = 11;
+  repeated SkuSpec skuSpecs = 12;
+}
+
+message SkuAttr {
+  int32 id = 1;
+  string sku_no = 2;
+  int32 sku_stock = 3;
+  float sku_price = 4;
+  google.protobuf.Struct sku_attrs = 5; // dynamic
+  string createdAt = 6;
+  string updatedAt = 7;
+}
+
+message SkuSpec {
+  int32 id = 1;
+  int32 SkuId = 2;
+  google.protobuf.Struct sku_specs = 3; // dynamic
+  string createdAt = 4;
+  string updatedAt = 5;
+}
+
+
+message ProductSkuDetail {
   int32 productId = 1;
   string skuNo = 2;
   string productName = 3;
   float sku_price = 4;
   int32 sku_stock = 5;
-  string thumb= 6;
+  string thumb = 6;
 }
 
-message GetProductsResponse {
-  repeated ProductDetail products = 1;
+message GetProductsSkuResponse {
+  repeated ProductSkuDetail products = 1;
 }

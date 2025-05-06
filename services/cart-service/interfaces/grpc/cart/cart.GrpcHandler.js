@@ -1,6 +1,6 @@
 const CartService = require('../../../application/services/cart.service');
 
-async function getCartHandler(call, callback) {
+async function getCart(call, callback) {
     try {
         const { userId } = call.request;
         const items = await CartService.getCart(userId);
@@ -10,17 +10,18 @@ async function getCartHandler(call, callback) {
     }
 }
 
-async function addToCartHandler(call, callback) {
+async function addToCart(call, callback) {
     try {
-        const { userId, item } = call.request;
-        await CartService.addProductToCart(userId, item);
+        const userId= call.request.userId;
+        const {productId,skuNo, quantity} = call.request.item
+        await CartService.addProductToCart(userId, productId,skuNo,quantity);
         callback(null, { success: true, message: 'Add to cart success' });
     } catch (error) {
         callback(null, { success: false, message: error.message });
     }
 }
 
-async function updateCartItemHandler(call, callback) {
+async function updateCartItem(call, callback) {
     try {
         const { userId, item } = call.request;
         await CartService.updateProductToCart(userId, item);
@@ -31,7 +32,7 @@ async function updateCartItemHandler(call, callback) {
 }
 
 module.exports = {
-    getCartHandler,
-    addToCartHandler,
-    updateCartItemHandler
+    getCart,
+    addToCart,
+    updateCartItem
 };

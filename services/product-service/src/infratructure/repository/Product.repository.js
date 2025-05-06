@@ -1,4 +1,5 @@
-const { getSelectData } = require("../../shared/utils/index")
+const { getSelectData } = require("../../shared/utils/index");
+
 class ProductRepository {
     constructor(models) {
         this.Product = models.Product;
@@ -11,6 +12,12 @@ class ProductRepository {
 
     async getProductById(productId) {
         return this.Product.findByPk(productId);
+    }
+
+    async getProductsByIds(productIds) {
+        return this.Product.findAll({
+            where: { id: productIds }
+        });
     }
 
     async findBySlug(slug) {
@@ -26,7 +33,6 @@ class ProductRepository {
     }
 
     async findAllSku(skuNos) {
-        console.log(this.Sku)
         return this.Sku.findAll({
             where: { sku_no: skuNos }
         });
@@ -43,7 +49,6 @@ class ProductRepository {
             where: { SkuId }
         });
     }
-
 
     async increaseProductSaleCount(ProductId, quantity) {
         return this.Product.increment("sale_count", {
@@ -85,8 +90,9 @@ class ProductRepository {
 
         return skuAttr;
     }
-    async getPaginatedProducts(page = 1, limit=10) {
-        const offset = (page - 1) * limit
+
+    async getPaginatedProducts(page = 1, limit = 10) {
+        const offset = (page - 1) * limit;
         const { count, rows } = await this.Product.findAndCountAll({
             where: {
                 status: 'active'
@@ -95,7 +101,7 @@ class ProductRepository {
             limit,
             offset,
             order: [['sort', 'ASC']],
-        })
+        });
         return {
             products: rows,
             limit,
