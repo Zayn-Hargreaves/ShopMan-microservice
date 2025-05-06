@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const productClient = require('../grpc/product.client');
+const productClient = require('../grpc/product/product.client');
 
 router.get('/', (req, res) => {
-    productClient.GetAllProducts({}, (err, response) => {
+    const page = parseInt(req.params.page) || 1;
+    const limit = parseInt(req.params.limit) || 10
+    productClient.GetPaginatedProducts({page, limit}, (err, response) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json(response.products);
     });

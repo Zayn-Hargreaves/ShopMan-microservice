@@ -4,8 +4,10 @@ const path = require('path');
 const {
     GetAllProducts,
     GetProductBySlug,
-    GetProductsBySkuList
+    GetProductsBySkuList,
+    GetPaginatedProducts
 } = require('./productGrpcHandler');
+
 const PROTO_PATH = path.resolve(__dirname, './product.proto');
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
@@ -22,10 +24,16 @@ const server = new grpc.Server();
 server.addService(productProto.ProductService.service, {
     GetAllProducts,
     GetProductBySlug,
-    GetProductsBySkuList
+    GetProductsBySkuList,
+    GetPaginatedProducts
 });
 
-server.bindAsync('0.0.0.0:50052', grpc.ServerCredentials.createInsecure(), () => {
-    server.start();
-    console.log('🚀 gRPC ProductService running on port 50052');
+// Bind server to a valid address
+server.bindAsync('0.0.0.0:50052', grpc.ServerCredentials.createInsecure(), (err, port) => {
+    if (err) {
+        console.error('Failed to bind server:', err.message);
+        return;
+    }
+    console.log(`🚀 gRPC ProductService running on port ${port}`);
+    server.start(); // Start the server only after successful binding
 });

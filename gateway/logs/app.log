@@ -162,3 +162,131 @@
 [2025-05-03 21:39:19] INFO: 🚀 API Gateway running on port 3000
 [2025-05-03 21:39:29] INFO: [43fbb975-df9f-49ab-af38-c4d1c6023731] POST /api/users/signup
 [2025-05-03 21:40:12] INFO: [6b6bb1f1-a4d4-439b-b50a-60bbfd49c86b] POST /api/users/auth/signup
+[2025-05-06 02:07:34] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 02:08:34] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 04:40:43] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:42:12] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:42:26] INFO: [d9d6fc9a-b804-4d65-b674-87c3c6d0067e] POST /auth/signup
+[2025-05-06 10:42:56] INFO: [06d180d2-6f2c-4ef1-9062-2c5bb9fa54b8] POST /user/signup
+[2025-05-06 10:46:19] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:46:21] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:46:27] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:46:32] INFO: [44bf4f17-5e0f-4582-852f-58a7d20e82f8] POST /user/signup
+[2025-05-06 10:46:58] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:47:04] INFO: [e1b69a68-c740-4544-8b21-20e2946da658] POST /user/signup
+[2025-05-06 10:50:05] INFO: [1d968360-4e0a-4954-8f05-fd6ccfdb22f2] POST /user/signup
+[2025-05-06 10:50:15] INFO: [5bf16a64-2651-48fb-8485-19f71c1d19b4] POST /user/signup
+[2025-05-06 10:54:40] INFO: [2a45882a-8e1a-434f-b25f-7be4fa425a2f] POST /user/signup
+[2025-05-06 10:55:33] INFO: [d3fc19ba-4144-453f-aa99-201fd82d47e8] POST /user/login
+[2025-05-06 10:57:49] INFO: [78aa2309-c7e5-4499-a1d6-2f6113f7b87c] POST /user/refresh-token
+[2025-05-06 10:58:18] INFO: [ed039018-322f-4614-b685-ef1246459d73] POST /user/refresh-token
+[2025-05-06 10:58:43] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:58:46] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:58:48] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:58:49] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:58:51] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:58:56] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:58:58] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 10:59:02] INFO: [5cc7ef6d-b32b-4383-b4d2-3e16f064c798] POST /user/refresh-token
+[2025-05-06 11:00:17] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:00:21] INFO: [2a2521b3-04e8-4e52-b908-134509f9304d] POST /user/refresh-token
+[2025-05-06 11:03:11] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:03:13] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:03:17] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:03:26] INFO: [a87a534d-1bd2-4b93-9b1d-fae12cd48425] POST /user/refresh-token
+[2025-05-06 11:03:46] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:03:58] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:04:00] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:04:04] INFO: [bb91ad56-ce86-4d08-a5fc-0838b9cc2ab1] POST /user/refresh-token
+[2025-05-06 11:04:55] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:04:57] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:04:59] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:04:59] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:05:10] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:05:15] INFO: [707e21fd-b4e6-4cde-af29-a9306f6613b6] POST /user/refresh-token
+[2025-05-06 11:05:52] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:06:03] INFO: [6fbddc79-7bbe-493b-a3c7-601de5e626bd] POST /user/refresh-token
+[2025-05-06 11:11:28] INFO: [f1109dae-9623-447c-a546-6a313b091ad8] POST /user/refresh-token
+[2025-05-06 11:13:03] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:13:23] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:13:25] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:13:28] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:13:32] INFO: [b60a0452-08a6-403d-aab7-60ad41a5350e] POST /user/refresh-token
+[2025-05-06 11:14:13] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:14:14] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:14:21] INFO: [65e66c96-4733-40a7-be30-f55dfb7edec7] POST /user/refresh-token
+[2025-05-06 11:14:47] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:14:52] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:14:55] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:14:56] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:15:02] INFO: [5516e618-3059-4614-948e-896cb5f94785] POST /user/refresh-token
+[2025-05-06 11:15:13] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:15:20] INFO: [763e0966-b6de-495c-bb55-c5449f04c33d] POST /user/refresh-token
+[2025-05-06 11:15:32] INFO: [f971ea4e-2ce3-4504-badf-3f6396139a30] POST /user/refresh-token
+[2025-05-06 11:15:44] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:15:46] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:02] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:05] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:14] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:18] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:29] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:31] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:33] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:34] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:40] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:40] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:47] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:51] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:16:54] INFO: [61ca1001-640d-4122-a76a-d4f3da9d6594] POST /user/refresh-token
+[2025-05-06 11:17:47] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:17:50] INFO: [417bddfd-b50a-4655-bae0-ac2e3194450b] POST /user/refresh-token
+[2025-05-06 11:18:02] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:18:05] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:18:08] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:18:48] INFO: [5dc8f3fc-8436-4579-bad7-672e8d0a746b] POST /user/refresh-token
+[2025-05-06 11:19:19] INFO: [331f4213-6172-4044-9153-9181159bfa29] POST /user/refresh-token
+[2025-05-06 11:21:10] INFO: [83ac2c57-0446-4a12-88ad-1b021c655c28] POST /product/
+[2025-05-06 11:21:16] INFO: [4f211128-4511-4787-b380-ff532b58de3f] POST /product
+[2025-05-06 11:21:36] INFO: [6b426f4b-30eb-4f5c-b490-625fae5fad4a] GET /product
+[2025-05-06 11:22:02] INFO: [0efe44ab-7a93-4ff6-932e-6c41c7abfb7b] GET /product
+[2025-05-06 11:23:15] INFO: [887d1461-97f1-4c60-8191-b5f38bbe4d53] GET /product
+[2025-05-06 11:23:49] INFO: [83036db7-2eca-4912-b236-7ff53eb150e0] GET /product
+[2025-05-06 11:34:39] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:34:53] INFO: [85819e2d-de4d-4170-be13-22c8f9f3c3cf] GET /product
+[2025-05-06 11:38:06] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:38:35] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:38:36] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:38:42] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:38:49] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:38:55] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:38:57] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:39:09] INFO: [fe575aa0-0d8a-4ceb-98f5-6f685775c263] GET /product
+[2025-05-06 11:39:48] INFO: [a9fd9c63-acfb-4c27-a1b0-6afd0ce38a30] GET /product
+[2025-05-06 11:39:50] INFO: [e2dd1418-ef07-4725-a037-7919e3cb8797] GET /product
+[2025-05-06 11:39:51] INFO: [c3c92eef-55a1-41e3-8e0d-e0963ee6eec6] GET /product
+[2025-05-06 11:41:48] INFO: [e344e54c-d727-44f6-a4b2-473d7454b85b] GET /product
+[2025-05-06 11:42:41] INFO: [31390dd6-6138-42ab-96eb-94b7a4d5f77e] GET /product
+[2025-05-06 11:44:28] INFO: [9d7b32fa-8062-416b-99b3-5a8b8621bddf] GET /product
+[2025-05-06 11:46:53] INFO: [fae9c97c-5647-4c21-8908-93bb9cd71791] GET /product
+[2025-05-06 11:49:08] INFO: [833a7f96-475d-44a5-8913-ffb84ce79535] GET /product
+[2025-05-06 11:50:48] INFO: [46a224e8-1d34-4daf-9611-63be75002c09] GET /product
+[2025-05-06 11:53:38] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:54:48] INFO: [8f1effcc-f8bd-4b2c-a0ae-ba3b13374b26] GET /product
+[2025-05-06 11:56:04] INFO: [697423ea-bef0-4b34-975d-8c5b200043c7] GET /product
+[2025-05-06 11:57:19] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:57:20] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:57:25] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:57:27] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:57:28] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 11:57:32] INFO: [3a87e487-f4b1-4c9f-8320-ec939332d23d] GET /product
+[2025-05-06 12:01:18] INFO: [abce83d6-9194-46cc-b7aa-eec579875bbf] GET /product
+[2025-05-06 12:01:56] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 12:02:20] INFO: [23fb2c78-60ad-4163-97cc-19119961b028] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:06:34] INFO: [e9320ce2-444e-476c-a187-239d2f06fc5c] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:09:00] INFO: [26231b65-1ac3-48bd-ba89-92610355d5e1] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:13:37] INFO: [298abd79-7cc0-448c-80f0-8a75d023aef2] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:15:02] INFO: [ad52a804-a53c-4531-9af2-0acae6cc34a4] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:15:27] INFO: [d8e2a648-6e0b-4d7a-9b8f-30ef2c77d874] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:16:07] INFO: [012cfb6d-9d6a-42e8-b105-bf169dd2e694] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:17:13] INFO: [46875cb4-6325-4b46-881a-0427e73aa766] GET /product/detail/womens-brown-cotton-letter-print-t-shirt
+[2025-05-06 12:24:21] INFO: [ab73ad95-1133-4d64-9387-c294c8592092] GET /product/detail/womens-brown-cotton-letter-print-t-shirt

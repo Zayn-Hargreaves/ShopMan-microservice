@@ -4,7 +4,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const { getProductListFromProductService } = require("../../interfaces/grpc/product/productClient")
 const { runProducer } = require("../../infratructure/rabbit mq/rabbitmq")
 const Joi = require("joi");
-const { NotFoundError, BadRequestError, ConflictError } = require("../../../user-service/shared/cores/error.response");
+const { NotFoundError, BadRequestError, ConflictError } = require("../../shared/cores/error.response");
 class OrderService {
     static validateFromCartInput(data) {
         const schema = Joi.object({

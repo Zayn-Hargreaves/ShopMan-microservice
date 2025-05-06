@@ -1,9 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const productRoutes = require("./interfaces/rest/product.route")
-const {startOrderCreatedConsumer} = require("./interfaces/rabbit mq/orderCreated.consumer")
-require("./interfaces/grpc/product.grpcServer")
+const productRoutes = require("./src/interfaces/rest/product.route")
+const {startOrderCreatedConsumer} = require("./src/interfaces/rabbit mq/orderCreated.consumer")
+require("./src/interfaces/grpc/product.grpcServer")
 
 app.use((err, req, res, next) => {
     console.log('🛑 JSON parse error?', err.message);

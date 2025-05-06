@@ -1,4 +1,4 @@
-const databasePromise = require("../../../infratructure/database")
+const databasePromise = require("../../database")
 const initializeAddress = require("./address.model")
 const initializeComments = require("./comment.model")
 const initializeFollows = require("./follow.model")

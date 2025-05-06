@@ -2,5 +2,4 @@
 product-connector.json
 elasticsearch-sink.json
 node_modules/
-./src/sequelize-cli
 src/sequelize-cli/

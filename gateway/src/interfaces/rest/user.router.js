@@ -16,9 +16,13 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.post('/refresh-token', authenticateToken,(req, res) => {
-    userGrpcClient.RefreshToken({ refresh_token: req.refreshToken }, (err, response) => {
-        if (err) return res.status(500).json({ error: err.message });
+router.post('/refresh-token', authenticateToken, (req, res) => {
+
+    userGrpcClient.RefreshToken({ refresh_token: req.refreshtoken }, (err, response) => {
+        if (err) {
+            console.error('Error from gRPC server:', err.message);
+            return res.status(500).json({ error: err.message });
+        }
         res.json(response);
     });
 });

@@ -1,5 +1,5 @@
 
-const { BadGatewayError } = require("../cores/error.response");
+const { BadGatewayError } = require("../shared/cores/error.response");
 const { getRedis } = require("../infratructure/redis/client");
 
 class RedisService {

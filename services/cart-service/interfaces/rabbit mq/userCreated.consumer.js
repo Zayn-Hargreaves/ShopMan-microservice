@@ -15,10 +15,10 @@ async function startUserCreatedConsumer() {
         DLX_ROUTING_KEY,
         ROUTING_KEY,
         async (message) => {
-            const { userId } = message;
-            if (!userId) throw new Error("Missing userId in message");
-
-            await CartService.createCartIfNotExist(userId);
+            const { UserId } = message;
+            if (!UserId) throw new Error("Missing userId in message");
+            console.log(UserId)
+            await CartService.createCartIfNotExist(UserId);
         }
     );
 }

@@ -1,9 +1,9 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const authRoutes = require('./interfaces/rest/auth.route');
-const userRoutes = require("./interfaces/rest/user.route")
-    require("./interfaces/grpc/user.Grpcserver")
+const authRoutes = require('./src/interfaces/rest/auth.route');
+const userRoutes = require("./src/interfaces/rest/user.route")
+require("./src/interfaces/grpc/user.Grpcserver")
 
 app.use((err, req, res, next) => {
     console.log('🛑 JSON parse error?', err.message);

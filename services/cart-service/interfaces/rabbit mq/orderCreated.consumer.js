@@ -17,6 +17,7 @@ async function startOrderCreatedConsumer() {
         DLX_ROUTING_KEY,
         ROUTING_KEY,
         async (message) => {
+            console.log("test")
             await CartService.RemoveOrderdItem(message);
         }
     );

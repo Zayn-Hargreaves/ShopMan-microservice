@@ -10,7 +10,7 @@ class RepositoryFactory {
         if (!this.models) {
             this.models = await initializeModels();
             this.repositories = {
-            CartRepository : new CartRepository(this.models),
+                CartRepository: new CartRepository(this.models),
             };
         }
     }

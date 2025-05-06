@@ -6,7 +6,6 @@ const initializeSkuAttr = async (sequelize) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
         },
         sku_no: {
             type: DataTypes.STRING,

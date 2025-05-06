@@ -1,4 +1,5 @@
-const ProductRepository = require("../../application/models/Products.model")
+const ProductRepository = require("./Product.repository")
+const initializeModels = require("../../application/models/index")
 class RepositoryFactory {
     constructor() {
         this.models = null;
@@ -9,8 +10,8 @@ class RepositoryFactory {
         if (!this.models) {
             this.models = await initializeModels();
             this.repositories = {
-               ProductRepository : new ProductRepository(this.models)
 
+                ProductRepository: new ProductRepository(this.models)
             };
         }
     }

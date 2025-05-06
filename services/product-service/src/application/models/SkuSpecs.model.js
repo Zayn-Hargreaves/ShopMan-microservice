@@ -5,7 +5,6 @@ const initializeSkuSpecs = async(sequelize)=>{
         id:{
             type:DataTypes.INTEGER,
             primaryKey:true,
-            autoIncrement:true
         },
         sku_specs:{
             type:DataTypes.JSONB,

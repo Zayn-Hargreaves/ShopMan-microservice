@@ -1,3 +1,4 @@
+const { getSelectData } = require("../../shared/utils/index")
 class ProductRepository {
     constructor(models) {
         this.Product = models.Product;
@@ -25,6 +26,7 @@ class ProductRepository {
     }
 
     async findAllSku(skuNos) {
+        console.log(this.Sku)
         return this.Sku.findAll({
             where: { sku_no: skuNos }
         });
@@ -42,7 +44,7 @@ class ProductRepository {
         });
     }
 
-    
+
     async increaseProductSaleCount(ProductId, quantity) {
         return this.Product.increment("sale_count", {
             by: quantity,
@@ -82,6 +84,24 @@ class ProductRepository {
         await skuAttr.save();
 
         return skuAttr;
+    }
+    async getPaginatedProducts(page = 1, limit=10) {
+        const offset = (page - 1) * limit
+        const { count, rows } = await this.Product.findAndCountAll({
+            where: {
+                status: 'active'
+            },
+            attributes: getSelectData(['id', 'slug', 'name', 'sale_count', 'price', 'discount_percentage', 'thumb', 'rating']),
+            limit,
+            offset,
+            order: [['sort', 'ASC']],
+        })
+        return {
+            products: rows,
+            limit,
+            total: count,
+            totalPages: Math.ceil(count / limit)
+        };
     }
 }
 

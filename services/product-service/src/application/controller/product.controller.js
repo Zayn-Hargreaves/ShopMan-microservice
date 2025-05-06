@@ -1,4 +1,4 @@
-const { OkResponse } = require("../../../user-service/shared/cores/success.response")
+const { OkResponse } = require("../../shared//cores//success.response")
 const ProductService = require("../service/product.service")
 class ProductController{
     getAllProduct = async(req, res, next)=>{

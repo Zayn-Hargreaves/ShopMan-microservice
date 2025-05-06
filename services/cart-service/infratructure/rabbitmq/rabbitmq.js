@@ -54,7 +54,7 @@ const runProducer = async (topic, message, notiExchange, notiQueue, notiExchange
 
 
 
-const runConsumer = async (notiExchange, notiQueue, notiExchangeDLX, notiRoutingKeyDLX, routingKey) => {
+const runConsumer = async (notiExchange, notiQueue, notiExchangeDLX, notiRoutingKeyDLX, routingKey, callback) => {
     try {
         const connection = await amqp.connect(process.env.RABBITMQ_URL);
         const channel = await connection.createChannel();
@@ -82,7 +82,7 @@ const runConsumer = async (notiExchange, notiQueue, notiExchangeDLX, notiRouting
                 console.log(`✅ Received message [${routingKey}]:`, data);
 
                 try {
-                    await NotificationService.handleUserCreated(data);  // 👉 logic ở tầng Application
+                    if(callback) await callback(data)
                     channel.ack(msg);
                 } catch (error) {
                     console.error("❌ Failed to process message:", error);

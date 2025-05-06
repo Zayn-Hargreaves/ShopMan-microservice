@@ -6,7 +6,6 @@ const initializeSku = async(sequelize)=>{
         id:{
             type:DataTypes.INTEGER,
             primaryKey:true,
-            autoIncrement:true
         },
         ProductId:{
             type:DataTypes.INTEGER,

@@ -15,6 +15,7 @@ const initializeModels = async()=>{
         const Inventories = await initializeInventory(sequelize)
         const Product = await initializeProduct(sequelize)
         const Sku = await initializeSku(sequelize)
+        console.log(Sku)
         const SkuAttr = await initializeSkuAtrr(sequelize)
         const SkuSpecs = await initializeSkuSpecs(sequelize)
         const SpuToSku = await initializeSpuToSku(sequelize)
@@ -28,4 +29,5 @@ const initializeModels = async()=>{
     }
 }
 
-module.exports = initializeModels;
+await initializeModels()
+// module.exports = initializeModels;

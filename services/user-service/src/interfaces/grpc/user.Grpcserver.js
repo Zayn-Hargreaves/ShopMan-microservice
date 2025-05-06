@@ -17,7 +17,8 @@ server.addService(userProto.service, {
             const result = await AuthService.signUp(call.request);
             callback(null, {
                 message: "Sign up success",
-                ...result.tokens,
+                access_token:result.tokens.accessToken,
+                refresh_token:result.tokens.refreshToken,
                 user_id: result.user.id,
                 email: result.user.email,
                 name: result.user.name
@@ -31,7 +32,8 @@ server.addService(userProto.service, {
             const result = await AuthService.login(call.request);
             callback(null, {
                 message: "Login success",
-                ...result.tokens,
+                access_token:result.tokens.accessToken,
+                refresh_token:result.tokens.refreshToken,
                 user_id: result.user.id,
                 email: result.user.email,
                 name: result.user.name
@@ -45,10 +47,8 @@ server.addService(userProto.service, {
             const result = await AuthService.HandleRefreshToken(call.request.refresh_token);
             callback(null, {
                 message: "Refresh token success",
-                ...result.tokens,
-                user_id: result.user.id,
-                email: result.user.email,
-                name: result.user.name
+                access_token:result.accessToken,
+                refresh_token:result.refreshToken,
             });
         } catch (err) {
             callback(err, null);

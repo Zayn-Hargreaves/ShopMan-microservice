@@ -1,4 +1,4 @@
-const { NotFoundError } = require("../../../user-service/shared/cores/error.response");
+const { NotFoundError } = require("../../../../user-service/src/shared/cores/error.response");
 const RepositoryFactory = require("../../infratructure/repository/repositoryFactory")
 class ProductService {
     static async getProductDetail(slug) {

@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const { NOTACCEPTABLE, UnauthorizedError } = require('../cores/error.response');
 const RedisService = require("../../application/redis.service")
+const refreshSecretKey = process.env.REFRESH_SECRET
+const accessSecretKey = process.env.ACCESS_SECRET
 const authenticateToken = async (req, res, next) => {
     const authorization = req.headers['authorization'];
 
@@ -30,6 +32,7 @@ const authenticateToken = async (req, res, next) => {
 
     if (accessToken) {
         try {
+            console.log("aday")
             const { userId, jti } = jwt.verify(accessToken, accessSecretKey);
             
             if (!userId) {

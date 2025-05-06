@@ -1,6 +1,6 @@
 const Redis = require("ioredis");
-const config = require("../config/default");
-const { InternalServerError } = require("../shared/cores/error.response");
+const config = require("../../config/default");
+const { InternalServerError } = require("../../shared/cores/error.response");
 const REDIS_CONFIG = {
   singleNode: {
     url: config.redis.url || "redis://localhost:6379", // URL mặc định nếu không có config

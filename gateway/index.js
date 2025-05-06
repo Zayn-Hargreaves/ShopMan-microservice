@@ -28,7 +28,7 @@ app.use(rateLimit({
     windowMs: 60 * 1000,
     max: 100
 }));
-
+app.use(express.json())
 app.use("/user",userRoutes)
 app.use("/product",ProductRoutes)
 app.use(authenticateToken)

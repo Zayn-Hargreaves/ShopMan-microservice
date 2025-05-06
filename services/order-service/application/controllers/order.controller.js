@@ -1,4 +1,4 @@
-const { OkResponse } = require("../../../user-service/shared/cores/success.response.js")
+const { OkResponse } = require("../../shared/cores/success.response.js")
 const OrderService = require("../services/order.service.js")
 
 class OrderController{

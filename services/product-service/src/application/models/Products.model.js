@@ -7,7 +7,6 @@ const initializeProducts = async (sequelize) => {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
         },
         name: {
             type: DataTypes.STRING,
@@ -84,8 +83,7 @@ const initializeProducts = async (sequelize) => {
         modelName: "Products",
         tableName: "Products",
         freezeTableName: true,
-        paranoid: true,
-        timestamps: true,
+            timestamps: true,
     })
     Product.addHook("beforeCreate", (product) => {
         product.slug = product.name.toLowerCase().replace(/ /g, "-");
