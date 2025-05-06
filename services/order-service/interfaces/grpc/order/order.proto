@@ -40,6 +40,7 @@ message FromCartResponse {
   string paymentIntentClientSecret = 4;
   repeated CartItem items = 5;
   float totalAmount = 6;
+  string paymentIntentId=7;
 }
 
 message BuyNowResponse {
@@ -49,7 +50,7 @@ message BuyNowResponse {
 }
 
 message ConfirmRequest {
-  string orderId = 1;
+  string paymentIntentId = 1;
   string userId = 2;
 }
 

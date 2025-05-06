@@ -72,7 +72,7 @@ class ProductService {
         return result;
     }
 
-    async handleOrderCreated({ userId, orderId, orderItems = [] }) {
+    static async handleOrderCreated({ userId, orderId, orderItems = [] }) {
         await RepositoryFactory.initialize();
         const productRepo = RepositoryFactory.getRepository("ProductRepository");
 

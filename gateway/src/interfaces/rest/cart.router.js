@@ -5,7 +5,6 @@ const cartClient = require('../grpc/cart/cart.client');
 // Lấy giỏ hàng của user
 router.get('/', (req, res) => {
     const userId = req.userId;
-    console.log(userId)
     cartClient.GetCart({ userId }, (err, response) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json(response.items);
@@ -15,7 +14,6 @@ router.get('/', (req, res) => {
 // Thêm sản phẩm vào giỏ hàng
 router.post('/add', (req, res) => {
     const userId = req.userId
-    console.log(userId)
     const { item } = req.body;
     cartClient.AddToCart({ userId, item }, (err, response) => {
         if (err) return res.status(500).json({ error: err.message });

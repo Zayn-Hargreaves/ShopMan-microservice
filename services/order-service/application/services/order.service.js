@@ -78,16 +78,18 @@ class OrderService {
 
             await Promise.all(productProcessing);
             const paymentIntent = await stripe.paymentIntents.create({
-                amount: Math.round(totalAmount ),
+                amount: Math.round(totalAmount),
                 currency: "sgd",
                 metadata: {
                     userId: String(userId),
                     lockKeys: lockList.map(l => l.key).join(','),
+                    items: JSON.stringify(finalItems)
                 },
             });
 
             return {
                 paymentIntentClientSecret: paymentIntent.client_secret,
+                paymentIntentId: paymentIntent.id,
                 items: finalItems,
                 totalAmount,
             };
@@ -137,11 +139,13 @@ class OrderService {
                 metadata: {
                     userId: String(userId),
                     lockKeys: lock.key,
+
                 },
             });
 
             return {
                 paymentIntentClientSecret: paymentIntent.client_secret,
+                paymentIntentId: paymentIntent.id,
                 productId,
                 skuNo,
                 quantity,
@@ -158,37 +162,44 @@ class OrderService {
         await RepositoryFactory.initialize();
         const OrderRepo = RepositoryFactory.getRepository("OrderRepository");
 
-        // 1. Kiểm tra trạng thái thanh toán
+        // 1. Lấy payment intent từ Stripe
         const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
-        if (!paymentIntent || paymentIntent.status !== "succeeded") {
+
+        // 2. Kiểm tra trạng thái thanh toán
+        if (!paymentIntent || paymentIntent.status == "succeeded") {
             throw new BadRequestError("Payment not completed or invalid");
         }
 
-        // 2. Gỡ khóa Redis
-        const lockKeys = paymentIntent.metadata.lockKeys?.split(',') || [];
-        for (const key of lockKeys) {
-            await RedisService.releaseLock({ key });
+        // 3. Giải lock Redis (nếu có)
+        if (paymentIntent.metadata.lockKeys) {
+            const lockKeys = paymentIntent.metadata.lockKeys
+                .split(',')
+                .map(key => key.trim())
+                .filter(Boolean);
+            for (const key of lockKeys) {
+                await RedisService.releaseLock({ key });
+            }
         }
 
-        // 3. Lấy orderItems từ metadata (nên đã có cả skuNo từ bước fromCart)
-        let orderItems;
-        try {
-            orderItems = JSON.parse(paymentIntent.metadata.orderItems || "[]");
-        } catch (e) {
-            throw new ConflictError("Invalid order item data", e);
+        // 4. Lấy order items từ metadata
+        let orderItems = [];
+        if (paymentIntent.metadata.items) {
+            try {
+                orderItems = JSON.parse(paymentIntent.metadata.items);
+            } catch (e) {
+                throw new ConflictError("Invalid order items data in payment metadata", e);
+            }
+        } else {
+            throw new ConflictError("No order items found in payment metadata");
         }
 
-        if (!orderItems.length) throw new ConflictError("No items in order metadata");
-
-        // 4. Tính tổng và chuẩn bị chi tiết đơn hàng
+        // 5. Tính tổng & chuẩn bị chi tiết đơn hàng
         let orderTotal = 0;
         const orderDetailsData = [];
-
         for (const item of orderItems) {
             const { productId, skuNo, quantity, unitPrice } = item;
             const itemTotal = parseFloat(unitPrice) * quantity;
             orderTotal += itemTotal;
-
             orderDetailsData.push({
                 ProductId: productId,
                 quantity,
@@ -196,6 +207,7 @@ class OrderService {
             });
         }
 
+        // 6. Tạo order
         const order = await OrderRepo.createOrder({
             UserId: userId,
             TotalPrice: orderTotal,
@@ -203,7 +215,6 @@ class OrderService {
         });
 
         await OrderRepo.bulkCreateOrderDetails(order.id, orderDetailsData);
-
         const topic = 'order.created';
         const message = {
             userId,
@@ -223,7 +234,7 @@ class OrderService {
             runProducer(topic, message, EXCHANGE, 'notificationEventsQueue', DLX_EXCHANGE, DLX_ROUTING_KEY),
             runProducer(topic, message, EXCHANGE, 'productEventsQueue', DLX_EXCHANGE, DLX_ROUTING_KEY),
         ]);
-
+        // 7. Trả kết quả
         return {
             orderCreated: true,
             paymentIntentId,

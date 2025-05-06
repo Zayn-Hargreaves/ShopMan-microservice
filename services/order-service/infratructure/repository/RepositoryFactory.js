@@ -1,5 +1,5 @@
 const OrderRepository = require("./OrderRepository")
-
+const initializeModels = require("../../application/models/index")
 class RepositoryFactory {
     constructor() {
         this.models = null;

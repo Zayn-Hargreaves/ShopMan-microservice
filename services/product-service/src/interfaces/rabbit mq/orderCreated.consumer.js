@@ -17,7 +17,7 @@ async function startOrderCreatedConsumer() {
         DLX_ROUTING_KEY,
         ROUTING_KEY,
         async (message) => {
-            await ProductService.RemoveOrderdItem(message);
+            await ProductService.handleOrderCreated(message);
         }
     );
 }

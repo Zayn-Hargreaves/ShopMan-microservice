@@ -32,7 +32,7 @@ const authenticateToken = async (req, res, next) => {
 
     if (accessToken) {
         try {
-            console.log("aday")
+            const data = jwt.verify(accessToken,accessSecretKey)
             const { userId, jti } = jwt.verify(accessToken, accessSecretKey);
             
             if (!userId) {

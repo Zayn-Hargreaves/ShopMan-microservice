@@ -10,6 +10,7 @@ async function fromCart(call, callback) {
             success: true,
             message: 'Order created from cart successfully',
             paymentIntentClientSecret: order.paymentIntentClientSecret,
+            paymentIntentId:order.paymentIntentId,
             items: order.items,
             totalAmount: order.totalAmount
         });
@@ -45,9 +46,9 @@ async function buyNow(call, callback) {
 // Handler cho RPC Confirm
 async function confirm(call, callback) {
     try {
-        const { orderId, userId } = call.request;
+        const {userId, paymentIntentId } = call.request;
         // Gọi logic xác nhận đơn hàng
-        await OrderService.confirmPayment(orderId, userId);
+        await OrderService.confirmPayment({userId, paymentIntentId});
         callback(null, {
             success: true,
             message: 'Order confirmed successfully'

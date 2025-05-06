@@ -485,3 +485,80 @@
 [2025-05-06 16:54:24] INFO: [a60181c8-1204-4be0-a1b5-8e5ba6868aea] POST /order/from-cart
 [2025-05-06 16:55:46] INFO: 🚀 API Gateway running on port 3000
 [2025-05-06 16:57:38] INFO: [3599d1fa-92dc-4e02-83ef-9276d86cf5ef] POST /order/from-cart
+[2025-05-06 17:02:14] INFO: [182b4618-3cc5-4cee-8a0e-b89c69156b86] POST /order/from-cart
+[2025-05-06 17:08:31] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:08:47] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:09:50] INFO: [752cfdfb-f8d3-4502-9193-b43c89e84d06] POST /order/from-cart
+[2025-05-06 17:11:20] INFO: [f744e362-752c-43d4-b66d-392f36b26caf] POST /user/refresh-token
+[2025-05-06 17:11:47] INFO: [46352818-5a2e-4cfb-9f16-9f66ffbd3ae6] POST /order/from-cart
+[2025-05-06 17:13:48] INFO: [db4d792f-4bc1-4002-83ee-c6032f2edc00] POST /order/confirm
+[2025-05-06 17:14:19] INFO: [344fdbef-38e6-42b6-83cc-8d1621a1f981] POST /order/confirm
+[2025-05-06 17:14:51] INFO: [4b2f0f35-3a9d-4680-ae36-357067b6755a] POST /Order/confirm
+[2025-05-06 17:14:54] INFO: [7afc6129-365d-43d5-a44a-ecb25334436d] POST /Order/confirm
+[2025-05-06 17:15:16] INFO: [bbd91f68-da7b-48fb-9121-1fbf9ead316e] POST /order/confirm
+[2025-05-06 17:15:52] INFO: [1a445444-cd75-4689-abc1-4d46f56ceb72] POST /order/confirm
+[2025-05-06 17:16:07] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:16:11] INFO: [9119ffd6-f44b-40db-a2ae-101b2a3d79d6] POST /order/confirm
+[2025-05-06 17:16:19] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:16:23] INFO: [ffcdb22d-b35d-4f32-9392-e91d07c11aa6] POST /order/confirm
+[2025-05-06 17:16:48] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:16:52] INFO: [3ba999b0-af61-45fb-b830-f277d81f0c06] POST /order/confirm
+[2025-05-06 17:17:01] INFO: [7010b5d5-f3c9-4844-a7af-216834152fc4] POST /order/confirm
+[2025-05-06 17:17:52] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:18:31] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:18:41] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:18:48] INFO: [36a68463-ca67-4bed-8ec5-dd3af6ef0ff5] POST /order/confirm
+[2025-05-06 17:19:35] INFO: [df892218-13c9-4180-8281-2967b9e98c85] POST /user/refresh-token
+[2025-05-06 17:20:01] INFO: [40201330-489f-47cb-bc8c-b22730cfe9ab] POST /user/refresh-token
+[2025-05-06 17:20:42] INFO: [30004ad2-7309-4d46-b676-cf53d9aaef2f] POST /user/refresh-token
+[2025-05-06 17:21:05] INFO: [3f132bbc-985a-49b1-86ed-f9b204d9bb38] POST /order/confirm
+[2025-05-06 17:22:24] INFO: [9c8beae9-e3bc-4b8d-854c-5720bceed4a7] POST /order/confirm
+[2025-05-06 17:23:19] INFO: [9b32cbde-4df7-4e54-88bd-27f35590ae5c] POST /order/confirm
+[2025-05-06 17:31:37] INFO: [4aaea835-2fc5-4bc1-babf-a87a0c119ba0] POST /order/from-cart
+[2025-05-06 17:32:19] INFO: [f8af277d-a7ef-4b3c-8ac2-1e3fa47c5eb1] POST /order/from-cart
+[2025-05-06 17:36:18] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:36:54] INFO: [e640876f-fa94-42dd-84bc-0fbafeaf113d] POST /order/from-cart
+[2025-05-06 17:37:09] INFO: [42451923-3994-4296-8e7b-a79b46d29504] POST /order/from-cart
+[2025-05-06 17:37:41] INFO: [b4823f8d-0046-4ebb-9b5a-1e57d47db76d] POST /order/from-cart
+[2025-05-06 17:38:34] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:38:40] INFO: [20f3640d-5c5b-491f-b969-5470c89a7110] POST /order/from-cart
+[2025-05-06 17:38:56] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:39:30] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:39:39] INFO: [aea11d8f-c624-4be7-9562-c867f8cde48b] POST /order/from-cart
+[2025-05-06 17:41:33] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:42:38] INFO: 🚀 API Gateway running on port 3000
+[2025-05-06 17:43:54] INFO: [8066bb38-0722-4eb0-9ed3-683cc8058c25] POST /order/confirm
+[2025-05-06 17:44:27] INFO: [51b8a537-4606-4cd7-9678-310201f2055c] POST /order/confirm
+[2025-05-06 17:45:23] INFO: [6eebbb9d-881f-4266-9ce3-39a843dc1cea] POST /order/confirm
+[2025-05-06 17:46:07] INFO: [493ad75a-4e13-4a4f-994a-b866e7c6e56e] POST /order/confirm
+[2025-05-06 17:49:34] INFO: [f4c96a6e-b99f-449b-b39c-582cdd7662ca] POST /order/confirm
+[2025-05-06 17:50:11] INFO: [168fec04-2393-436e-a8b5-41e41de2d1db] POST /order/confirm
+[2025-05-06 17:50:45] INFO: [c67c5007-a1f3-4da4-9a04-4622d4031a14] POST /order/confirm
+[2025-05-06 17:51:06] INFO: [a6a2f4a0-f1dc-4b3d-9e72-f97a04f14851] POST /order/confirm
+[2025-05-06 17:56:30] INFO: [671bc1ac-173b-4f94-b106-ed7afdd293e4] POST /order/from-cart
+[2025-05-06 17:56:50] INFO: [770ccfab-932e-4d3f-b90d-93d506dceb5a] POST /order/from-cart
+[2025-05-06 17:56:58] INFO: [c7778c54-ac6e-40a9-9b3d-47e98173bd24] POST /order/from-cart
+[2025-05-06 17:57:19] INFO: [fdc50c4c-2461-4b84-bb9d-1658406ecfe7] POST /order/from-cart
+[2025-05-06 17:57:33] INFO: [a366080b-4a5e-45b8-b35b-616b1dd66b50] POST /order/from-cart
+[2025-05-06 17:58:00] INFO: [7c01c670-e6b8-4220-8111-670f70fcd6ee] POST /order/from-cart
+[2025-05-06 17:58:23] INFO: [6d23d7f3-1a98-455e-8cfb-fec373bf39a3] POST /order/confirm
+[2025-05-06 18:01:28] INFO: [66d28937-2a50-4838-b2c1-ee0080ac43e7] POST /order/from-cart
+[2025-05-06 18:02:49] INFO: [d5207673-6fa7-4bce-830c-d144ad852534] POST /order/confirm
+[2025-05-06 18:03:34] INFO: [2b293428-2aee-4628-83fc-d031dad82ad2] POST /order/confirm
+[2025-05-06 18:04:37] INFO: [7feddc1e-400d-4540-babf-25f69570ef9c] GET /cart
+[2025-05-06 18:24:17] INFO: [82b0f813-656a-4e5f-b536-48847d8555c8] POST /order/from-cart
+[2025-05-06 18:24:53] INFO: [9e44328e-5979-43df-a1c4-a9953862930e] POST /order/confirm
+[2025-05-06 18:25:03] INFO: [50355304-3cc0-4ce1-a820-4e6e5c8a1754] POST /order/confirm
+[2025-05-06 18:25:26] INFO: [73649686-045a-437f-993f-b1d03df9321c] POST /order/confirm
+[2025-05-06 18:25:34] INFO: [c486da59-a594-4cba-b200-e1e07452cb26] POST /user/refresh-token
+[2025-05-06 18:26:03] INFO: [1c7575d3-64ed-4841-a4b9-7045398b35f8] POST /order/confirm
+[2025-05-06 18:27:55] INFO: [8916788d-b015-4976-8684-d8eb4f921bd7] POST /order/confirm
+[2025-05-06 18:28:15] INFO: [5d405b0a-f2f4-46b6-8333-06a4736264fa] POST /order/confirm
+[2025-05-06 18:28:33] INFO: [d2dd6bbb-cca2-42cf-93b1-cd69c2a79de1] POST /order/from-cart
+[2025-05-06 18:28:44] INFO: [3abafda8-db2f-4d8b-9d23-b6a237a9ee04] GET /cart
+[2025-05-06 18:32:45] INFO: [8d2eb01d-5f95-438b-9338-2f575f11e0c5] POST /order/from-cart
+[2025-05-06 18:33:15] INFO: [3fbfa893-517f-4872-a622-e1bab0de6ae8] POST /order/confirm
+[2025-05-06 18:35:57] INFO: [2ccd0eb9-1ba0-4858-b290-58760696cd34] POST /order/confirm
+[2025-05-06 18:37:15] INFO: [73c149fa-07ff-45ba-91ce-fe05cfe9272b] POST /order/confirm
+[2025-05-06 18:38:01] INFO: [02b8b786-22db-46d6-babd-4e7f8dc2d75d] POST /order/confirm
+[2025-05-06 18:38:42] INFO: [9f1eda16-9460-42a4-9fec-0ae894776710] POST /order/confirm

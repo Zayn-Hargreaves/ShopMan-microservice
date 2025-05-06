@@ -105,7 +105,7 @@ class CartService {
     static async RemoveOrderdItem({ userId, orderid, orderItems = [] }) {
         await RepositoryFactory.initialize()
         const CartRepository = RepositoryFactory.getRepository("CartRepository")
-        const cart = CartRepository.findByUserId(userId)
+        const cart = await CartRepository.findByUserId(userId)
         if (!cart) {
             throw new NotFoundError(`No active cart found for user ${userId} or cart not found`)
         }

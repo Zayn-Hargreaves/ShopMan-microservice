@@ -26,8 +26,8 @@ router.post('/buy-now',authenticateToken,(req, res) => {
 // Xác nhận đơn hàng
 router.post('/confirm', (req, res) => {
     const userId = req.userId
-    const payload = { ...req.body, userId }
-    orderClient.Confirm(payload, (err, response) => {
+    const paymentIntentId = req.body.paymentIntentId
+    orderClient.Confirm({userId,paymentIntentId}, (err, response) => {
         if (err) return res.status(500).json({ error: err.message });
         res.json(response);
     });
