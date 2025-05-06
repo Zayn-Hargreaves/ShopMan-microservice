@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const { startOrderCreatedConsumer } = require('./interefaces/rabbit mq/orderCreated.consumer');
-const initializeModels = require('./application/model');
+const { startOrderCreatedConsumer } = require('./src/interefaces/rabbit mq/orderCreated.consumer');
+const initializeModels = require('./src/application/model');
 
 
 app.use((err, req, res, next) => {

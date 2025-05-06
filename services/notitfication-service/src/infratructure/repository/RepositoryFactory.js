@@ -10,7 +10,7 @@ class RepositoryFactory {
         if (!this.models) {
             this.models = await initializeModels();
             this.repositories = {
-            NotificaitionRepository : new NotificaitionRepository(this.models),
+                NotificationRepository: new NotificaitionRepository(this.models),
             };
         }
     }

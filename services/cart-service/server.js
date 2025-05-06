@@ -1,10 +1,10 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const CartRoutes = require("./interfaces/rest/cart.route.js")
-const {startOrderCreatedConsumer} = require("./interfaces/rabbit mq/orderCreated.consumer.js")
-const {startUserCreatedConsumer } = require("./interfaces/rabbit mq/userCreated.consumer.js");
-const initializeModels = require('./application/models/index.js');
+const CartRoutes = require("./src/interfaces/rest/cart.route.js")
+const {startOrderCreatedConsumer} = require("./src/interfaces/rabbit mq/orderCreated.consumer.js")
+const {startUserCreatedConsumer } = require("./src/interfaces/rabbit mq/userCreated.consumer.js");
+const initializeModels = require('./src/application/models/index.js');
 try {
     require("./interfaces/grpc/cart/cartGrpcServer.js")
 } catch (error) {

@@ -3,8 +3,8 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const OrderRoutes = require("./interfaces/rest/order.route")
-require("./interfaces/grpc/order/order.grpcServer")
+const OrderRoutes = require("./src/interfaces/rest/order.route")
+require("./src/interfaces/grpc/order/order.grpcServer")
 
 app.use((err, req, res, next) => {
     console.log('🛑 JSON parse error?', err.message);
